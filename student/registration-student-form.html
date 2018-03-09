@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration From</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.css">
+	<link rel="stylesheet" href="../css/owl.carousel.css">
+
+	<!-- Main css -->
+	<link rel="stylesheet" href="../css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body style="background-image: url('../images/intro-bg.jpg');">
+
+
+<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container" style="position: sticky;background-color: black;width: 100%">
+		<!-- navbar header -->
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand" style="color: orange">Transcript</a>
+		</div>
+
+		<div class="collapse navbar-collapse" >
+
+			<ul class="nav navbar-nav navbar-right" style="position: sticky;">
+				<li><a href="index.html" style="color: orange">Home</a></li>
+				<li><a href="#speakers" style="color: orange">Our Team</a></li>
+				<li><a href="#program" style="color: orange">Contact</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+</div>
+
+
+<section id="form" style="padding-top:6%; color: white;">
+<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<center><h3>Student Registration Form</h3></center>
+				<form action="/action_page.php">
+					<div class="form-group">
+						<fieldset>
+							<legend>University Details:</legend>
+							<div class="col-sm-12">
+					    		<div class="form-group">
+					    			<label for="university">University:</label>
+					      			<select class="form-control">
+					      				<option>--Select--</option>
+					      				<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+					      			</select>
+					      		</div>
+				      		</div>
+				      			<div class="col-sm-12">
+						      		<div class="form-group">
+						    			<label for="Institute">Institute:</label>
+						      			<select class="form-control">
+						      				<option>--Select--</option>
+						      				<option>Charusat University</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+						      			</select>
+						      		</div>
+					      		</div>
+					      	
+						      	<div class="col-sm-6">
+						      		<div class="form-group">
+						    			<label for="Programme">Programme:</label>
+						      			<select class="form-control">
+						      				<option>--Select--</option>
+						      				<option>B.Tech(CSE)</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+						      			</select>
+						      		</div>
+						      	</div>
+		
+			      		</fieldset>
+		      		</div>
+
+		      		<div class="form-group">
+			      		<fieldset>
+							<legend>Joining and Graduation Year:</legend>
+							<div class="col-sm-12">	
+								<div class="row">
+						      		<div class="form-inline">
+										<div class="col-sm-5">			      		
+								      		<div class="form-group">
+								    			<label for="join">Joining Year:</label>
+								    			<div class="input-group">
+								    				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								      				<input type="month" class="form-control" id="join" required>
+								      			</div>
+								      		</div>
+							      		</div>
+							      		
+							      		<div class="col-sm-5">
+								      		<div class="form-group">
+								    			<label for="graduation">Graduation Year:</label>
+								    			<div class="input-group">
+								    				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								      				<input type="month" class="form-control" id="graduation" required>
+								      			</div>
+								      		</div>
+							      		</div>
+							      	</div>
+							    </div>
+			      			</div>
+		      			</fieldset>
+		      		</div>
+
+		      		<div class="form-group">
+			      		<fieldset>
+			      			<legend>Student's Details:</legend>
+			      			<div class="col-sm-12">
+					      		<div class="form-group">
+					    			<label for="enrollment">Student's Enrollment ID:</label>
+					    			<div class="input-group">
+					    				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+					    				<input type="text" class="form-control" id="enrollment" placeholder="Enter student's enrollment id" required>
+					      			</div>
+					      		</div>
+
+					      		<div class="row">
+					      			<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="fname">Student's Firstname:</label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							      				<input type="text" class="form-control" id="fname" placeholder="Enter student's firstname" required>
+							      			</div>
+							      		</div>
+							      	</div>
+
+							      	<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="lname">Student's Lastname:</label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							    				<input type="text" class="form-control" id="lname" placeholder="Enter student's lastname" required>
+							      			</div>
+							      		</div>
+							      	</div>
+							    </div>
+
+							    <div class="form-group">
+					    			<label for="enrollment">Student's Contact No:</label>
+					    			<div class="input-group">
+					    				<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+					    				<input type="text" class="form-control" id="Contact_no" placeholder="Enter student's contact no" required>
+					      			</div>
+					      		</div>
+
+				      			<div class="form-group">
+				    				<label for="address">Address:</label>
+				    			
+
+				    			<div class="row">
+					    			<div class="col-xs-3">
+					    				<input type="text" class="form-control" id="b_no" placeholder="Flat No.">
+					    			</div>
+					    			<div class="col-xs-9">		
+					    					<input type="text" class="form-control" id="b_name" placeholder="Building Name">
+					    			</div>
+
+					    			<div class="col-xs-3" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" id="s_no" placeholder="Street No.">
+					    			</div>
+
+					    			<div class="col-xs-9" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" id="s_name" placeholder="Street Name">
+					    			</div>
+					    
+					    			<div class="col-xs-3" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" id="city" placeholder="City">
+					    			</div>
+
+					    			<div class="col-xs-4" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" id="p_code" placeholder="Pincode">
+					    			</div>
+
+					    			<div class="col-xs-5" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" id="state" placeholder="State">
+					    			</div>
+				      			</div>
+					      	</div>
+			      		</fieldset>
+			      	</div>
+
+			      	<div class="form-group">
+			      		<fieldset>
+			      			<legend>Email and Password</legend>
+			      			<div class="col-sm-12">
+					      		<div class="form-group">
+					    			<label for="email">Email:</label>
+					    			<div class="input-group">
+					    				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					      				<input type="email" class="form-control" id="email" placeholder="Enter email" required>
+					      			</div>
+					      		</div>
+
+						      	<div class="row">
+					      			<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="password">Password:</label>
+							    			<div class="input-group">
+					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+					      						<input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+					      					</div>
+							      			
+							      		</div>
+							      	</div>
+
+							      	<div class="col-sm-6">
+										<div class="form-group">
+							    			<label for="cpassword">Confirm Password:</label>
+							      			<div class="input-group">
+					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+					      						<input type="password" class="form-control" id="cpassword" placeholder="Confirm your password" required>
+					      					</div>
+
+							      		</div>
+							      	</div>
+						      	</div>
+						    </div>
+			      		</fieldset> 
+			      		<fieldset>
+			      		<legend></legend>
+			      		<div class="col-xs-offset-2 col-xs-4">
+							<div class="form group">
+								<input type="reset" class="btn btn-reset" value="Reset" id="reset" style="width: 90%; background-color: #cc8a1a">  
+		                    </div>
+		                </div>
+		                <div class="col-xs-4">
+							<div class="form group">
+		                        <input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width: 90%; background-color: #4aa542;">
+		                    </div>
+		                </div>
+		                </fieldset>
+		                <hr>
+			      	</div>
+		      	</form>
+			</div>
+			</fieldset>
+		</div>
+	</div>
+</section>
+
+<!-- =========================
+    FOOTER SECTION   
+============================== -->
+
+<footer style="background-color: black;">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<p class="wow fadeInUp" data-wow-delay="0.6s" style="color: #f9ba4d;">Copyright &copy; 2017 Coders</p>
+				<ul class="social-icon">
+					<li><a href="#" class="fa fa-facebook-official wow fadeInUp" data-wow-delay="1s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-dribbble wow fadeInUp" data-wow-delay="1.6s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="1.9s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-github wow fadeInUp" data-wow-delay="2s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-pinterest wow fadeInUp" data-wow-delay="2s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s" style="color: #f9ba4d;"></a></li>
+				</ul>
+
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
