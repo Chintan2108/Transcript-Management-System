@@ -1,7 +1,7 @@
 <?php
 	
 	$user_name = $_POST['u_id'];
-	$password = $_POST['password'];
+	$password = $_POST['pass'];
 
 	//Establishing connectionn with Database.
 	$conn = mysqli_connect("localhost", "root", "","tms");
@@ -11,14 +11,16 @@
 	}
 
 	//Retriving entries that match username and password.
-	$query = "SELECT email, password FROM students WHERE email='$user_name' AND password='$password'";
+	$query = "SELECT email, password FROM university WHERE email='$user_name' AND password='$password'";
 	$result = $conn -> query($query);
-
+	
 	//Authenticating the user.
 	if($result -> num_rows > 0)
 	{
 		//User Verified!
-		header("Location: ../student/student-transcript-form.html");
+		//page need to be added
+		//header("Location: ../student/student-transcript-form.html");
+		echo $user_name;
 	}
 	else
 	{
