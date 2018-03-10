@@ -17,8 +17,7 @@
 			if (rows != 0) {
 				var h2 = document.createElement('h2');
 				h2.setAttribute('align',"center");
-				h2.setAttribute('style',"color:white");
-				h2.setAttribute('style',"margin-bottom:2%;");
+				h2.setAttribute('style',"color:white;margin-bottom:3%");
 				
 				text = document.createTextNode('Pending Requests');
 				h2.appendChild(text);
@@ -28,8 +27,7 @@
 				table.border = 2;
 				table.align = "center";
 				table.setAttribute('style', "border-color:#386772");
-				table.setAttribute('style', "background-color: #e6efef;");		
-
+				table.setAttribute('style', "background-color: #e6efef");		
 				var studentName = "null"; //array here
 				//var studentName = <?php echo json_encode(studentName); ?>;
 				var deliveryAddress = "null";  //array here
@@ -42,6 +40,42 @@
 				//var approvalFlag = <?php echo json_encode(approvalFlag)?>
 				var paymentFlag = "null";
 				//var paymentFlag = <?php echo json_encode(paymentFlag); ?>;
+
+				var tr1 = document.createElement('tr');
+				var th1 = document.createElement('th');
+				var th2 = document.createElement('th');
+				var th3 = document.createElement('th');
+				var th4 = document.createElement('th');
+				var th5 = document.createElement('th');
+
+				th1.setAttribute('style',"width: 160px;height: 50px;margin-top:5px;margin-right:5px;padding-left:16px;margin-bottom:5px;color:white;background-color:#132f38");
+				th2.setAttribute('style',"width: 160px;height: 50px;margin-top:5px;margin-right:5px;padding-left:16px;margin-bottom:5px;color:white;background-color:#132f38");
+				th3.setAttribute('style',"width: 170px;height: 50px;margin-top:5px;margin-right:5px;padding-left:16px;margin-bottom:5px;color:white;background-color:#132f38");
+				th4.setAttribute('style',"width: 160px;height: 50px;margin-top:5px;margin-right:5px;padding-left:10px;margin-bottom:5px;color:white;background-color:#132f38");
+				th5.setAttribute('style',"width: 160px;height: 50px;margin-top:5px;margin-right:5px;padding-left:10px;margin-bottom:5px;color:white;background-color:#132f38");
+
+				var h1name = document.createTextNode("Student Name");
+				th1.appendChild(h1name);
+
+				var h2name = document.createTextNode("Delivery Address");
+				th2.appendChild(h2name);
+
+				var h3name = document.createTextNode("Transcript Details");
+				th3.appendChild(h3name);
+
+				var h4name = document.createTextNode("Accept");
+				th4.appendChild(h4name);
+
+				var h5name = document.createTextNode("Reject");
+				th5.appendChild(h5name);
+
+				tr1.appendChild(th1);
+		            tr1.appendChild(th2);
+		            tr1.appendChild(th3);
+		            tr1.appendChild(th4);
+		            tr1.appendChild(th5);
+
+		            table.appendChild(tr1);
 
 				for (var i = 0; i < rows; i++) {
 					var tr = document.createElement('tr');

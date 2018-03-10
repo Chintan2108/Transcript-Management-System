@@ -39,8 +39,8 @@
 	$mail->Host = "smtp.googlemail.com";
 	$mail->Port = 465; // or 587
 	$mail->IsHTML(true);
-	$mail->Username = "deveshhatkar@gmail.com";
-	$mail->Password = "researchist";
+	$mail->Username = "transcriptsmanager@gmail.com";
+	$mail->Password = "transcript1234";
 	$mail->SetFrom("deveshhatkar@gmail.com");
 	$mail->AddAddress($email);   // Add a recipient
 
@@ -52,6 +52,7 @@
 
 	if($mail->send()) {
 	 	$query = "INSERT INTO temp_students (id, first_name, last_name, email, university_id, institute, programme, flat_no, building_name, street_no, street_name, city, postal_code, state, password, joining_year, graduation_year, contact_no) VALUES('$student_id', '$fname', '$lname', '$email', '$university', '$institute', '$programme', '$flat_no', '$building_name', '$street_no', '$street_name', '$city', '$p_code', '$state', '$password', '$join_year', '$grad_year', '$contact_no')";
+	 	$conn -> query($query);
 	 	header("Location: ../student/registration-student-ack.html");
 	} 
 	else
