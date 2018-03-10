@@ -8,43 +8,59 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
-	<link rel="stylesheet" href="../css/owl.theme.css">
-	<link rel="stylesheet" href="../css/owl.carousel.css">
 
 	<!-- Main css -->
 	<link rel="stylesheet" href="../css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
+
+	<style>
+		.form-control{
+			background-color: #d7d8cb; 
+		}
+	</style>
 </head>
-<body style="background-image: url('../images/intro-bg.jpg');">
-<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
-	<div class="container" style="position: sticky;background-color: black;width: 100%">
-		<!-- navbar header -->
-		<div class="navbar-header">
-			<a href="#" class="navbar-brand" style="color: orange">Transcript</a>
-		</div>
+<body style="background: linear-gradient(#2e6060,#99bbcc,#2e6060);">
 
-		<div class="collapse navbar-collapse" >
 
-			<ul class="nav navbar-nav navbar-right" style="position: sticky;">
-				<li><a href="index.html" style="color: orange">Home</a></li>
-				<li><a href="#speakers" style="color: orange">Our Team</a></li>
-				<li><a href="#program" style="color: orange">Contact</a></li>
-			</ul>
+<!-- =========================
+     NAVIGATION LINKS     
+============================== -->
+<nav class="navbar navbar-inverse" style="background-color: #132f38; height: 80px;padding-top:1%;border-bottom:1px solid white;">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span> 
+	      </button>
+	      <a class="navbar-brand" href="#" style="font-size: 210%; font-style: bold; padding-right:50px;">Transcript</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">Home</a></li>
+	        <li><a href="#">Our Team</a></li>
+	        <li><a href="#">Contact</a></li> 
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
 
-		</div>
+<!-- =========================
+     STUDENT TRANSCRIPT FORM
+============================== -->
 
-	</div>
-</div>
-
-<section id="form" style="padding-top:6%; color: white;">
-<hr>
+<section id="form">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
-				<center><h3>Transcript Form</h3></center>
+			<center><div id="h">Transcript Form</div></center>
+			<div class="col-sm-8 col-sm-offset-2" style="background-color: #e6efef; padding-top: 2%;">
 				<form action="/action_page.php">
-					<div class="form-group">
+					<div class="form-group" style="padding-top:1%;">
 			      		<fieldset>
 			      			<legend>Student's Details:</legend>
 			      			<div class="col-sm-12">
@@ -216,23 +232,18 @@
 			      		<legend></legend>
 			      		<div class="col-xs-offset-2 col-xs-4">
 							<div class="form group">
-								<input type="reset" class="btn btn-reset" value="Reset" id="reset" style="width: 90%; background-color: #cc8a1a">
+								<input type="reset" class="btn btn-reset" value="Reset" id="reset" style="width: 90%; background-color: #8bb6ba; color: black;">
 		                        
 		                    </div>
 		                </div>
 		                <div class="col-xs-4">
 							<div class="form group">
-		                        <input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width: 90%; background-color: #4aa542;">
+		                        <input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width: 90%; background-color: #386772; color: white;">
 		                    </div>
 		                </div>
 		                </fieldset>
 		                <hr>
 			      	</div>
-
-
-
-
-
 				</form>
 			</div>
 		</div>
@@ -243,21 +254,21 @@
     FOOTER SECTION   
 ============================== -->
 
-<footer style="background-color: black;">
+<footer style="background-color: #132f38; height: 10px; margin-top: 2%; border-top:1px solid white;">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12">
-				<p class="wow fadeInUp" data-wow-delay="0.6s" style="color: #f9ba4d;">Copyright &copy; 2017 Coders</p>
+				<p class="wow fadeInUp" data-wow-delay="0.6s" style="color: #bfbfbf;">Copyright &copy; 2017 Coders</p>
 				<ul class="social-icon">
-					<li><a href="#" class="fa fa-facebook-official wow fadeInUp" data-wow-delay="1s" style="color: #f9ba4d;"></a></li>
-					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s" style="color: #f9ba4d;"></a></li>
-					<li><a href="#" class="fa fa-dribbble wow fadeInUp" data-wow-delay="1.6s" style="color: #f9ba4d;"></a></li>
-					<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s" style="color: #f9ba4d;"></a></li>
-					<li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="1.9s" style="color: #f9ba4d;"></a></li>
-					<li><a href="#" class="fa fa-github wow fadeInUp" data-wow-delay="2s" style="color: #f9ba4d;"></a></li>
-					<li><a href="#" class="fa fa-pinterest wow fadeInUp" data-wow-delay="2s" style="color: #f9ba4d;"></a></li>
-					<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s" style="color: #f9ba4d;"></a></li>
+					<li><a href="#" class="fa fa-facebook-official wow fadeInUp" data-wow-delay="1s" style="color: #bfbfbf;"></a></li>
+					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s" style="color: #bfbfbf;"></a></li>
+					<li><a href="#" class="fa fa-dribbble wow fadeInUp" data-wow-delay="1.6s" style="color: #bfbfbf;"></a></li>
+					<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s" style="color: #bfbfbf;"></a></li>
+					<li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="1.9s" style="color: #bfbfbf;"></a></li>
+					<li><a href="#" class="fa fa-github wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
+					<li><a href="#" class="fa fa-pinterest wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
+					<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
 				</ul>
 
 			</div>
