@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2018 at 02:04 AM
+-- Generation Time: Mar 10, 2018 at 08:31 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -21,28 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tms`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `institutes`
---
-
-CREATE TABLE `institutes` (
-  `id` varchar(20) DEFAULT NULL,
-  `name` varchar(256) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `programmes`
---
-
-CREATE TABLE `programmes` (
-  `id` varchar(20) NOT NULL,
-  `name` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -144,17 +122,18 @@ CREATE TABLE `transcript_request` (
   `payment_status` varchar(14) NOT NULL,
   `status` varchar(40) NOT NULL,
   `date_of_request` date NOT NULL,
-  `university_id` varchar(20) DEFAULT NULL
+  `university_id` varchar(20) DEFAULT NULL,
+  `contact_no` varchar(14) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transcript_request`
 --
 
-INSERT INTO `transcript_request` (`id`, `student_id`, `flat_no`, `building_name`, `street_no`, `street_name`, `city`, `postal_code`, `state`, `marksheet`, `duplicate_marksheet`, `transcript`, `degree_certificate`, `university_approval_status`, `payment_status`, `status`, `date_of_request`, `university_id`) VALUES
-('001', '001', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 1, 0, 'pending', 'pending', 'pending', '2017-12-06', '001'),
-('002', '001', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 2, 0, 'pending', 'pending', 'pending', '2017-12-06', '001'),
-('003', '002', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 2, 0, 'pending', 'pending', 'pending', '2017-12-06', '001');
+INSERT INTO `transcript_request` (`id`, `student_id`, `flat_no`, `building_name`, `street_no`, `street_name`, `city`, `postal_code`, `state`, `marksheet`, `duplicate_marksheet`, `transcript`, `degree_certificate`, `university_approval_status`, `payment_status`, `status`, `date_of_request`, `university_id`, `contact_no`) VALUES
+('001', '001', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 1, 0, 'pending', 'pending', 'pending', '2017-12-06', '001', NULL),
+('002', '001', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 2, 0, 'pending', 'pending', 'pending', '2017-12-06', '001', NULL),
+('003', '002', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 2, 0, 'pending', 'pending', 'pending', '2017-12-06', '001', NULL);
 
 -- --------------------------------------------------------
 
@@ -185,18 +164,6 @@ INSERT INTO `university` (`id`, `name`, `address`, `logo`, `email`, `password`) 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `institutes`
---
-ALTER TABLE `institutes`
-  ADD KEY `id` (`id`);
-
---
--- Indexes for table `programmes`
---
-ALTER TABLE `programmes`
-  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `students`
@@ -235,18 +202,6 @@ ALTER TABLE `university`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `institutes`
---
-ALTER TABLE `institutes`
-  ADD CONSTRAINT `institutes_ibfk_1` FOREIGN KEY (`id`) REFERENCES `university` (`id`);
-
---
--- Constraints for table `programmes`
---
-ALTER TABLE `programmes`
-  ADD CONSTRAINT `programmes_ibfk_1` FOREIGN KEY (`id`) REFERENCES `university` (`id`);
 
 --
 -- Constraints for table `students`
