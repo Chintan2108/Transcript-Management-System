@@ -37,6 +37,7 @@ h2 {
 
 h3 {
   line-height: 36px;
+  color: #f9ba4d;
 }
 
 h5 {
@@ -53,6 +54,23 @@ p {
 a {
   text-decoration: none !important;
   outline: none;
+}
+
+legend{
+  color: #f9ba4d;
+}
+
+label{
+  color: white  ;
+}
+
+h3{
+  color: #f9ba4d;
+}
+
+#h{
+  color: white;
+  font-size: 300%;
 }
 /*---------------------------------------
     Circle
@@ -193,8 +211,6 @@ footer {
 .custom-navbar {
     margin-bottom: 0;
     background-color: #101010;
-    padding-top: 0px;
-    
 }
 
 .custom-navbar .navbar-brand {
@@ -245,15 +261,13 @@ footer {
 
 @media(min-width:768px) {
     .custom-navbar {
-        border-bottom: 1px solid white;
+        padding: 20px 0;
         border-bottom: 0;
         background: 0 0; 
-        padding-bottom: 0px;
     }
     .custom-navbar.top-nav-collapse {
         background: #101010;
         padding: 0;
-        padding-bottom: 0px;
     }
 
 }
@@ -264,7 +278,7 @@ footer {
     Intro section              
 -----------------------------------------*/
 #intro {
-    background: url('../images/intro-bg.jpg') 50% 0 repeat-y fixed;
+    background-color: white;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -287,24 +301,18 @@ footer {
 
 
 legend{
-  color: #f9ba4d;
+  color: #0e2b59;
 }
 
 label{
-  color: white  ;
+  color: #0e2b59;
 }
 
 h3{
-  color: #f9ba4d;
-  font-size: 34px;
-}
-
-form{
-  margin-top: 5%;
-}
-
-#form{
-  padding-top:3.5%; color: white;margin-top: 5%;
+  color: white;
+  font-size: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-style: none;
 }
 /*---------------------------------------
    Overview  section              
