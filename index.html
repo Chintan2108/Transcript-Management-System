@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--test-->
-
 <!--
 New Event
 http://www.templatemo.com/tm-486-new-event
@@ -13,7 +11,9 @@ http://www.templatemo.com/tm-486-new-event
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="shortcut icon" href="images/favicon.png"> 
 <script src="js/modernizr.custom.js"></script>
 <script src="js/modal.js"></script>
@@ -54,12 +54,7 @@ http://www.templatemo.com/tm-486-new-event
 }
 
 #text_img{
-	font-size: 20px;
-	text-decoration-color: grey;
-	color: #0e2b59;
-}
-#text_img1{
-	font-size: 35px;
+	font-size: 30px;
 	text-decoration-color: grey;
 	color: #0e2b59;
 }
@@ -80,11 +75,9 @@ http://www.templatemo.com/tm-486-new-event
 	}
 }
 </style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
-<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse" style="background-image: url('../new_pics/home_bg1.jpg')">
 
 <!-- =========================
      PRE LOADER       
@@ -100,8 +93,7 @@ http://www.templatemo.com/tm-486-new-event
 <!-- =========================
      NAVIGATION LINKS     
 ============================== -->
-
-<nav class="navbar navbar-inverse" style="background-color: #132f38; height: 80px;padding-top:1%;border-bottom:1px solid white;margin-bottom: 0px;position:relative">
+<nav class="navbar navbar-inverse" style="background-color: #132f38; height: 80px;padding-top:1%;border-bottom:1px solid white; margin-bottom: 0px;">
 	  <div class="container">
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -113,9 +105,9 @@ http://www.templatemo.com/tm-486-new-event
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li><a href="#">Home</a></li>
-	        <li><a href="#">Our Team</a></li>
-	        <li><a href="#">Contact</a></li> 
+	        <li><a href="#Home">Home</a></li>
+	        <li><a href="#Our Team">Our Team</a></li>
+	        <li><a href="#Contact">Contact</a></li> 
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -125,16 +117,16 @@ http://www.templatemo.com/tm-486-new-event
 	  </div>
 	</nav>
 
+
 <!-- =========================
     INTRO SECTION   
 ============================== -->
 
-<section id="intro" class="parallax-section" style="background: radial-gradient(#acb6c4,#c9ced6,#9eacc1,#7088af);position:relative">
+<section id="intro" class="parallax-section" style="background: radial-gradient(#acb6c4,#c9ced6,#9eacc1,#7088af);">
 	<div class="container">
-		<div class="row"><div class="col-xs-12"></div></div>
 		<div class="row">
-			<div class="col-xs-12" style="color: #0e2b59;">
-				<h3 style="margin: 0px;">Transcript</h3> <h4>Service At Your DoorSteps</h4>
+			<div class="col-xs-12">
+				<h3 style="margin: 0px; color:#0e2b59;">Hackathon 2017-18</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -162,7 +154,7 @@ http://www.templatemo.com/tm-486-new-event
 		<div id="myModal1" class="modal">
 		 	<div class="modal-content">
 			    <article class="comic" style="width: 100%;">
-				    <div class="panel panel-modal" style="margin: 2%">
+				    <div class="panel panel-modal" style="margin: 2%;">
 				        <p class="text top-right"><span class="close" id="c1" style="margin-right: 5px;">&times;</span></p>
 				        <form>
 					        <fieldset>
@@ -192,7 +184,7 @@ http://www.templatemo.com/tm-486-new-event
 						        	<div class="row">
 						        		<div class="col-sm-12">
 						        		<div class="form-group">
-						        			<input type="submit" class="btn btn-submit" value="Sign In" id="submit" style="width:100%;background-color: #4aa542;">
+						        			<input type="submit" class="btn btn-submit" value="Sign In" id="submit" style="width:100%;background-color: #386772;">
 						        		</div>
 						        		</div>
 						        	</div>
@@ -220,7 +212,7 @@ http://www.templatemo.com/tm-486-new-event
 						        	<div class="row" style="margin-top: 2%;">
 						        		<div class="col-sm-12">
 						        			<div class="form-group">
-						        			<input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width:100%;background-color: #4aa542;">
+						        			<input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width:100%;background-color:#386772">
 						        		</div>
 						        		</div>
 						        	</div>
@@ -231,7 +223,7 @@ http://www.templatemo.com/tm-486-new-event
 		  		</div>
 			</div>
 
-		<div id="myModal2" class="modal" >
+		<div id="myModal2" class="modal">
 		  <!-- Modal content -->
 		  <div class="modal-content">
 		    <article class="comic" style="width: 100%;">
@@ -265,7 +257,7 @@ http://www.templatemo.com/tm-486-new-event
 				        	<div class="row">
 				        		<div class="col-sm-12">
 				        		<div class="form-group">
-				        			<input type="submit" class="btn btn-submit" value="Sign In" id="submit" style="width:100%;background-color: #4aa542;">
+				        			<input type="submit" class="btn btn-submit" value="Sign In" id="submit" style="width:100%;background-color: #386772;">
 				        		</div>
 				        		</div>
 				        	</div>
@@ -279,9 +271,9 @@ http://www.templatemo.com/tm-486-new-event
 				        	<div class="row">
                                     <div class="col-md-12 control">
                                     <div class="form-group">
-                                        <div style="border-top: 1px solid#888;margin-top: 2%; font-size:85%" >
+                                        <div style="border-top: 1px solid#888; margin-top: 2%; font-size:85%" >
                                             <p id="modal_text">Don't have an account? 
-                                        <a href="Student/registration-student-form.html" onClick="$('#loginbox').hide(); $('#signupbox').show()" >
+                                        <a href="registration_form.php" onClick="$('#loginbox').hide(); $('#signupbox').show()" >
                                             Sign Up Here
                                         </a></p>
                                         </div>
@@ -299,21 +291,19 @@ http://www.templatemo.com/tm-486-new-event
 </section>
 
 
-
-        
 <!-- =========================
 
     SPEAKERS SECTION   
 ============================== -->
 
  <!--Section: Team v.3-->
- <section class="team-section pb-4" id="speakers" class="parallax-section" style="padding-top:2%">
+ <section class="team-section pb-4" id="speakers" class="parallel-section" >
         
         <!--Section heading-->
-        <h1 class="h1 text-center py-5 " style=" size:40px;padding-bottom: 2%; " id="text_img1" >Our Team</h1>
+        <h1 class="h1 text-center py-5 " style=" size:40px " id="text_img1" >OUR TEAM</h1>
         <!--Section description-->
       
-        
+        <br><br>
         <!--Grid row-->
         <div class="row mb-lg-4 text-center text-md-left">
 
@@ -322,27 +312,27 @@ http://www.templatemo.com/tm-486-new-event
 
                 <div class="col-md-6 float-left">
                     <div class="avatar mx-auto">
-                        <img src="images/chintan.jpg" class="img-circle" alt="First sample avatar image">
-                    </div>
+                        <img src="new_pics/chintan.jpg" class="img-circle"  alt="First sample avatar image">
+                   </div>
                 </div>
 
                 <div class="col-md-6 float-right" id="text_img">
                     <h4>
                         <strong>Chintan Maniyar</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">UI/UX Designer</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">UI/UX Designer</h6>
                     <p class="grey-text"></p>
 
                     <!--Facebook-->
-                    <a class="icons-sm fb-ic" style="color:#0e2b59">
+                    <a class="icons-sm fb-ic">
                         <i class="fa fa-facebook"> </i>
                     </a>
                     <!--Twitter-->
-                    <a class="icons-sm tw-ic" style="color:#0e2b59">
+                    <a class="icons-sm tw-ic">
                         <i class="fa fa-twitter"> </i>
                     </a>
                     <!--Dribbble-->
-                    <a class="icons-sm dribbble-ic" style="color:#0e2b59">
+                    <a class="icons-sm dribbble-ic">
                         <i class="fa fa-dribbble"> </i>
                     </a>
                 </div>
@@ -356,30 +346,30 @@ http://www.templatemo.com/tm-486-new-event
 
                 <div class="col-md-6 float-left">
                     <div class="avatar mx-auto">
-                        <img src="images/tejas.jpg" class="img-circle" alt="Second sample avatar image">
-                    </div>
+                        <img src="new_pics/tejas.jpg" class="img-circle" alt="Second sample avatar image">
+                  
                 </div>
-
+                </div>
                 <div class="col-md-6 float-right">
                     <h4>
                         <strong>Tejas Pandit</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">Front-end Developer</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">Front-end Developer</h6>
                    
                     <!--Facebook-->
-                    <a class="icons-sm fb-ic" style="color:#0e2b59">
+                    <a class="icons-sm fb-ic">
                         <i class="fa fa-facebook"> </i>
                     </a>
                     <!--YouTube-->
-                    <a class="icons-sm yt-ic" style="color:#0e2b59">
+                    <a class="icons-sm yt-ic">
                         <i class="fa fa-youtube"> </i>
                     </a>
                     <!--Instagram-->
-                    <a class="icons-sm ins-ic" style="color:#0e2b59">
+                    <a class="icons-sm ins-ic">
                         <i class="fa fa-instagram"> </i>
                     </a>
                 </div>
-
+                <br>
             </div>
             <!--Grid column-->
 
@@ -387,35 +377,35 @@ http://www.templatemo.com/tm-486-new-event
         </div>
         <!--Grid row-->
 
-           
+            <br><br><br>
         <!--Grid row-->
         <div class="row text-center text-md-left" id="text_img">
-        		<br>
+        <br>
             <!--Grid column-->
             <div class="col-lg-6 col-md-12 mb-4">
 
                 <div class="col-md-6 float-left">
                     <div class="avatar mx-auto">
-                        <img src="images/dewanshi.jpg" class="img-circle" alt="Fourth sample avatar image">
-                    </div>
+                        <img src="new_pics/dewanshi.jpg" class="img-circle" alt="Fourth sample avatar image">
+                  </div>
                 </div>
 
                 <div class="col-md-6 float-right">
                     <h4>
                         <strong>Dewanshi Yadav</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">Front-end Developer</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">Front-end Developer</h6>
                    
                     <!--Facebook-->
-                    <a class="icons-sm fb-ic" style="color:#0e2b59">
+                    <a class="icons-sm fb-ic">
                         <i class="fa fa-facebook"> </i>
                     </a>
                     <!--Twitter-->
-                    <a class="icons-sm tw-ic" style="color:#0e2b59">
+                    <a class="icons-sm tw-ic">
                         <i class="fa fa-twitter"> </i>
                     </a>
                     <!--GitHub-->
-                    <a class="icons-sm git-ic" style="color:#0e2b59">
+                    <a class="icons-sm git-ic">
                         <i class="fa fa-github"> </i>
                     </a>
                 </div>
@@ -428,61 +418,63 @@ http://www.templatemo.com/tm-486-new-event
             <div class="col-lg-6 col-md-12 mb-4" id="text_img">
                 <div class="col-md-6 float-left">
                     <div class="avatar mx-auto">
-                        <img src="images/manali.jpg" class="img-circle" alt="Fifth sample avatar image">
-                    </div>
+                        <img src="new_pics/manali.jpg" class="img-circle"  alt="Fifth sample avatar image">
+                   
+                </div>
                 </div>
 
                 <div class="col-md-6 float-right">
                     <h4>
                         <strong>Manali Shah</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">Front-end Developer</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">Front-end Developer</h6>
                    
                     <!--Google +-->
-                    <a class="icons-sm gplus-ic" style="color:#0e2b59">
+                    <a class="icons-sm gplus-ic">
                         <i class="fa fa-google-plus"> </i>
                     </a>
                     <!--LinkedIn-->
-                    <a class="icons-sm li-ic" style="color:#0e2b59">
+                    <a class="icons-sm li-ic">
                         <i class="fa fa-linkedin"> </i>
                     </a>
                     <!--Email-->
-                    <a class="icons-sm email-ic" style="color:#0e2b59">
+                    <a class="icons-sm email-ic">
                         <i class="fa fa-envelope"> </i>
                     </a>
                 </div>
 
             </div>
             </div>
+            
             <!--Grid column-->
             <!--Grid column-->
             <div class="row text-center text-md-left" id="text_img">
-            		<br>
-            <div class="col-lg-6 col-md-12 mb-4" id="text_img">
-				
-          
+
+            <div class="col-lg-6 col-md-12 mb-4" id="text_img"-->
+
+            <br><br>
                 <div class="col-md-6 float-left">
-                    <div class="avatar mx-auto">
-                        <img src="images/kunal.jpg" class="img-circle" alt="First sample avatar image">
-                    </div>
+                    <div class="avatar mx-auto"-->
+                        <img src="new_pics/kunal.jpg" class="img-circle" alt="First sample avatar image">
+                  </div>
                 </div>
 
                 <div class="col-md-6 float-right">
                     <h4>
                         <strong>Kunal Shah</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">Front-end Developer</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">Front-end Developer</h6>
                   
                     <!--Facebook-->
-                     <a class="icons-sm gplus-ic" style="color:#0e2b59">
+                     <a class="icons-sm gplus-ic">
                         <i class="fa fa-google-plus"> </i>
                     </a>
                     <!--LinkedIn-->
-                    <a class="icons-sm li-ic" style="color:#0e2b59">
+                    <a class="icons-sm li-ic">
                         <i class="fa fa-linkedin"> </i>
                     </a>
                     <!--Email-->
-                    <a class="icons-sm email-ic" style="color:#0e2b59">
+                    <a class="icons-sm email-ic">
                         <i class="fa fa-envelope"> </i>
                     </a>
                 </div>
@@ -493,36 +485,36 @@ http://www.templatemo.com/tm-486-new-event
 
             <!--Grid column-->
             <div class="col-lg-6 col-md-12 mb-4" id="text_img">
-            		
-            
+
+            <br><br>
                 <div class="col-md-6 float-left">
                     <div class="avatar mx-auto">
-                        <img src="images/devesh.jpg" class="img-circle" alt="Second sample avatar image">
-                    </div>
+                        <img src="new_pics/devesh.jpg" class="img-circle"  alt="Second sample avatar image">
+             	</div>
                 </div>
 
                 <div class="col-md-6 float-right">
                     <h4>
                         <strong>Devesh Hatkar</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">Database Administrator</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">Database Administrator</h6>
                   
                     <!--Facebook-->
-                    <a class="icons-sm fb-ic" style="color:#0e2b59">
+                    <a class="icons-sm fb-ic">
                         <i class="fa fa-facebook"> </i>
                     </a>
                     <!--YouTube-->
-                    <a class="icons-sm yt-ic" style="color:#0e2b59">
+                    <a class="icons-sm yt-ic">
                         <i class="fa fa-youtube"> </i>
                     </a>
                     <!--Instagram-->
-                    <a class="icons-sm ins-ic" style="color:#0e2b59">
+                    <a class="icons-sm ins-ic">
                         <i class="fa fa-instagram"> </i>
                     </a>
                 </div>
 
             </div>
-            </div>
+            
             <!--Grid column-->
 
         </div>
@@ -530,33 +522,33 @@ http://www.templatemo.com/tm-486-new-event
 
         <!--Grid row-->
         <div class="row text-center text-md-left" id="text_img" >
-		<br>
+
             <!--Grid column-->
-            
+            <br><br>
             <div class="col-lg-6 col-md-12 mb-4">
 
                 <div class="col-md-6 float-left">
-                    <div class="avatar mx-auto">
-                        <img src="images/vedaant.jpg" class="img-circle" alt="Fourth sample avatar image">
-                    </div>
+                  
+                        <img src="new_pics/vedaant.jpg" class="img-circle" alt="Fourth sample avatar image">
+                    
                 </div>
 
                 <div class="col-md-6 float-right">
                     <h4>
                         <strong>Vedaant Joshi</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">Back-end Developer</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">Back-end Developer</h6>
                   
                     <!--Facebook-->
-                    <a class="icons-sm fb-ic" style="color:#0e2b59">
+                    <a class="icons-sm fb-ic">
                         <i class="fa fa-facebook"> </i>
                     </a>
                     <!--Twitter-->
-                    <a class="icons-sm tw-ic" style="color:#0e2b59">
+                    <a class="icons-sm tw-ic">
                         <i class="fa fa-twitter"> </i>
                     </a>
                     <!--GitHub-->
-                    <a class="icons-sm git-ic" style="color:#0e2b59">
+                    <a class="icons-sm git-ic">
                         <i class="fa fa-github"> </i>
                     </a>
                 </div>
@@ -571,26 +563,25 @@ http://www.templatemo.com/tm-486-new-event
             
                 <div class="col-md-6 float-left">
                     <div class="avatar mx-auto">
-                        <img src="images/vrajesh.jpg" class="img-circle" alt="Fifth sample avatar image">
-                    </div>
+                        <img src="new_pics/vrajesh.jpg" class="img-circle" alt="Fifth sample avatar image">
                 </div>
-
+                </div>
                 <div class="col-md-6 float-right">
                     <h4>
                         <strong>Vrajesh Rami</strong>
                     </h4>
-                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: #DBEFFE">Back-end Developer</h6>
+                    <h6 class="font-weight-bold grey-text mb-4" id="text_img" style="color: black;">Back-end Developer</h6>
                    
                     <!--Google +-->
-                    <a class="icons-sm fb-ic" style="color:#0e2b59">
+                    <a class="icons-sm fb-ic">
                         <i class="fa fa-facebook"> </i>
                     </a>
                     <!--YouTube-->
-                    <a class="icons-sm yt-ic" style="color:#0e2b59">
+                    <a class="icons-sm yt-ic">
                         <i class="fa fa-youtube"> </i>
                     </a>
                     <!--Instagram-->
-                    <a class="icons-sm ins-ic" style="color:#0e2b59">
+                    <a class="icons-sm ins-ic">
                         <i class="fa fa-instagram"> </i>
                     </a>
                 </div>
@@ -602,102 +593,8 @@ http://www.templatemo.com/tm-486-new-event
         <!--Grid row-->
 
     </section>
-    <!--Section: Team v.3-->
-            
 
 
-<!-- =========================
-    PROGRAM SECTION   
-============================== -->
-<section id="program" class="parallax-section" >
-	<div class="container">
-		<div class="row">
-			<div class="wow fadeInUp col-sm-6" data-wow-delay="0.6s">
-				<div class="section-title">
-					<h2 style="color: #0e2b59">Contact us</h2>
-				</div>
-			</div>
-
-			<div class="wow fadeInUp col-md-10 col-sm-10" data-wow-delay="0.9s">
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs" role="tablist">
-				</ul>
-				<!-- tab panes -->
-				<div class="tab-content">
-
-					<div role="tabpanel" class="tab-pane active" id="fday">
-						<!-- program speaker here -->
-						<div class="col-md-2 col-sm-2">
-							<img src="images/chintan.jpg" class="img-responsive" alt="program">
-						</div>
-						<div class="col-md-10 col-sm-10" style="color: grey;">
-							<h3 style="color: #0e2b59">Technical Support: Chintan Maniyar</h3>
-							<h6 style="color: #0e2b59">
-								<i class="fa fa-google-plus wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;chintanmaniyar@gmail.com
-								&nbsp;&nbsp;&nbsp;
-							</h6>
-							<h6 style="color: #0e2b59">
-								<i class="fa fa-facebook-official wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;abc@gmail.com 
-								&nbsp;&nbsp;&nbsp;  <i class="fa fa-twitter wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;abc@gmail.com
-							</h6>
-							<h6 style="color: #0e2b59">
-								<i class="fa fa-whatsapp wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;+91 9227123508 
-								&nbsp;&nbsp;&nbsp; <i class="fa fa-linkedin wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;abc@gmail.com
-							</h6>
-						</div>
-					</div>
-						<!-- program divider -->
-						<div class="program-divider col-md-12 col-sm-12"></div>
-
-						<!-- program speaker here -->
-						<div class="col-md-2 col-sm-2">
-							<img src="images/tejas.jpg" class="img-responsive" alt="program">
-						</div>
-						<div class="col-md-10 col-sm-10" style="color: grey;">
-							<h3 style="color: #0e2b59">Technical Support: Tejas Pandit</h3>
-							<h6 style="color: #0e2b59">
-								<i class="fa fa-google-plus wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;chintanmaniyar@gmail.com
-								&nbsp;&nbsp;&nbsp;
-							</h6>
-							<h6 style="color: #0e2b59">
-								<i class="fa fa-facebook-official wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;abc@gmail.com 
-								&nbsp;&nbsp;&nbsp;  <i class="fa fa-twitter wow fadeInUp" style="color: #033A49"></i>&nbsp;&nbsp;&nbsp;abc@gmail.com
-							</h6>
-							<h6 style="color: #0e2b59">
-								<i class="fa fa-whatsapp wow fadeInUp" style="color: #0e2b59"></i>&nbsp;&nbsp;&nbsp;+91 9227123508 
-								&nbsp;&nbsp;&nbsp; <i class="fa fa-linkedin wow fadeInUp" style="color: #0e2b59"></i>&nbsp;&nbsp;&nbsp;abc@gmail.com
-							</h6>
-						</div>
-
-				</div>
-
-		</div>
-	</div>
-</section>
-
-<section id="feedback" class="parallax-section" >
-	<div class="container">
-		<div class="row">
-			<div class="wow fadeInUp col-md-8 col-sm-8" data-wow-delay="0.6s" style="color: white">
-				<div class="section-title">
-					<h2 style="color:#0e2b59">Feedback</h2>
-				</div>
-				<ul class="nav nav-tabs" role="tablist">
-				</ul>
-			</div>
-
-			<div class="col-sm-8">
-				<form>
-					<div class="form-group">
-						<input type="Email" name="f_email" class="form-control" placeholder="Enter Email"><br>
-						<textarea type="" name="f_desc" class="form-control" rows=7 cols=7 placeholder="Description"></textarea><br>
-						<button class="btn btn-submit" style="margin-bottom: 2%; background-color:#0e2b59;color: white ">Send feedback</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</section>
 
 <!-- =========================
     FOOTER SECTION   
