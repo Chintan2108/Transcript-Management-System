@@ -23,7 +23,9 @@
 	else
 	{
 		//Invalid Username or Password!
-		
+
+		/* Redirect to invalid-username-password page */
+		header("Location: invalid-username-password.html");
 	}
 
 ?>
