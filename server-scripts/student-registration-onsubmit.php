@@ -25,6 +25,41 @@
 		die("Connection failed: " . $conn -> connect_error);
 	}
 	//Retriving entries that match username and password.
+
+
+	require 'PHPMailerAutoload.php';
+	$mail = new PHPMailer;
+	$mail->isSMTP();                    // Set mailer to use SMTP
+	$mail->Host = 'smtp.mail.yahoo.com';  // Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	$mail->Username = 'transcripts_info@yahoo.com';                 // SMTP username
+	$mail->Password = 'transcripts12345';                           // SMTP password
+	$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+	$mail->Port = 465;                                    // TCP port to connect to
+	$mail->SMTPDebug = 2;
+	$mail->setFrom('transcripts_info@yahoo.com', 'Team, TranscriptManagementSystem');
+	$mail->addAddress('15ce048@charusat.edu.in');     // Add a recipient
+
+
+	$mail->Subject = 'Password Recovery';
+	$mail->Body    = "http://localhost//transcript//forgetPassword//change_forgotten_password.php?passkey=$email";
+	
+	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+	if(!$mail->send()) {
+	 	echo 'Message could not be sent.';
+	    echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+		// PAGE WHICH WILL DISPLAY MESSAGE THAT MAIL HAS BEEN SENT.
+	    header("Location: check_mail.html ");
+	}
+	else
+	{
+		echo "This Email Id is not Registered!";
+		//ENTER THE PAGE FROM WHERE REGISTRATIO IS DONE.
+	    echo "Click here to <a href = '..registration_form.php..'> Register.";
+	}
+
 	
 	$query = "INSERT INTO temp_students ()";
 ?>
