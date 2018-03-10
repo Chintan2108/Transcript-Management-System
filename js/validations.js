@@ -1,7 +1,7 @@
 function checkPass()
 {
 //Store the password field objects into variables ...
-	alert('test');
+	//alert('test');
 	var pass1 = document.getElementById('password');
 	var pass2 = document.getElementById('cpassword');
 //Store the Confimation Message Object ...
@@ -134,6 +134,8 @@ function trnsfinal(){
 	}
 }
 
+
+//to fill the no of transcripts and calculate total cost automatically
 function autofill(){
 			var transcriptsno = document.getElementById('transcriptsno');
 			var transcriptscheck = document.getElementById('transcriptscheck');
