@@ -1,3 +1,12 @@
+<?php
+
+	$email = $_GET['email'];
+
+	session_start();
+	$_SESSION['email'] = $email;
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +61,7 @@
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
 				<center><h3>New Password</h3></center>
-				<form action="sample.php" method="POST" onsubmit="return password(this)" style="margin-top: 5%;">
+				<form action="server-scripts/student-password-change.php" method="POST" onsubmit="return password(this)" style="margin-top: 5%;">
 					<fieldset>
 						<legend>Password Details</legend>
 						<div class="col-sm-12">
@@ -60,7 +69,7 @@
 								<label for="enrollment">New Password:</label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-					    				<input type="password" class="form-control" id="password" placeholder="Enter new password" required>
+					    				<input type="password" name="password" class="form-control" id="password" placeholder="Enter new password" required>
 					      			</div>
 							</div>
 							<div class="form-group">
