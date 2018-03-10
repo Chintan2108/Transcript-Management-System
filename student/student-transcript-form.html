@@ -7,13 +7,48 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../js/validations.js"></script>
 
-	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.css">
+	<link rel="stylesheet" href="../css/owl.carousel.css">
 
 	<!-- Main css -->
 	<link rel="stylesheet" href="../css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		#dis:after {content: "";}
+	</style>
+	<script type="text/javascript">
+		function auto(){
+		var id = document.getElementById('enrollment');
+		var fname = document.getElementById('fname');
+		var lname = document.getElementById('lname');
+		var inst = document.getElementById('institute');
+		var prog = document.getElementById('programme');
 
+<<<<<<< HEAD
+		//id.value = <?php echo json_encode($id); ?>;
+		id.value = "15CE060";
+		id.disabled = true;
+		//fname.value = <?php echo json_encode($fname); ?>;
+		fname.value = "Chintan";
+		fname.disabled = true;
+		//lname.value = <?php echo json_encode($lname); ?>;
+		lname.value = "Maniyar";
+		lname.disabled = true;
+		//inst.value = <?php echo json_encode($inst); ?>;
+		inst.value = "CSPIT";
+		inst.disabled = true;
+		//prog.value = <?php echo json_encode($prog); ?>;
+		prog.value = "B.Tech";
+		prog.disabled = true;
+	}
+	
+		var base = 100;
+		var prev = [0,0,0,0];
+		//var base = <?php echo json_encode($base_cost); ?>;
+=======
 	<style>
 		.form-control{
 			background-color: #d7d8cb; 
@@ -21,46 +56,89 @@
 	</style>
 </head>
 <body style="background: linear-gradient(#2e6060,#99bbcc,#2e6060);">
+>>>>>>> cbe09fad98a73bd322dc9dcdf597fcd81b697d91
 
+
+		//Debugging done, check for bugs again
+		function update(count,id){
+			//alert(count);
+			var costtag = document.getElementById('cost');
+			var cost = parseInt(costtag.value);
+			alert(cost);
+			alert(count=="");
+			icount = parseInt(count);
+			//cost += base*parseInt(count);
+			if(id == "transcriptsno"){
+				if(count!=""){
+					if (prev[0]<icount) {alert("++"); cost += 100;}
+					else if(prev[0]>icount){cost -= 100;}
+					prev[0] = count;
+				}
+			}
+			if (id == "marksheetno") {
+				if(count!=""){
+					if (prev[1]<icount) {alert("++"); cost += 100;}
+					else if(prev[1]>icount){cost -= 100;}
+					prev[1] = count;
+				}
+			}
+			if (id == "dmarksheetno") {
+				if(count!=""){
+					if (prev[2]<icount) {alert("++"); cost += 100;}
+					else if(prev[2]>icount){cost -= 100;}
+					prev[2] = count;
+				}
+			}
+			if (id == "dcertino") {
+				if(count!=""){
+					if (prev[3]<icount) {alert("++"); cost += 100;}
+					else if(prev[3]>icount){cost -= 100;}
+					prev[3] = count;
+				}
+			}
+			costtag.value = "";
+			costtag.value = String(cost);
+		}
+	</script>
+
+</head>
+<body style="background: linear-gradient(#2e6060,#99bbcc,#2e6060);" onload="auto();">
 
 <!-- =========================
      NAVIGATION LINKS     
 ============================== -->
-<nav class="navbar navbar-inverse" style="background-color: #132f38; height: 80px;padding-top:1%;border-bottom:1px solid white;">
-	  <div class="container">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span> 
-	      </button>
-	      <a class="navbar-brand" href="#" style="font-size: 210%; font-style: bold; padding-right:50px;">Transcript</a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav">
-	        <li><a href="#">Home</a></li>
-	        <li><a href="#">Our Team</a></li>
-	        <li><a href="#">Contact</a></li> 
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
+    <nav class="navbar navbar-inverse" style="background-color: #132f38; height: 80px;padding-top:1%;border-bottom:1px solid white;">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#" style="font-size: 210%; font-style: bold; padding-right:50px;">Transcript</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Contact</a></li> 
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<!-- =========================
-     STUDENT TRANSCRIPT FORM
-============================== -->
-
-<section id="form">
+<section id="form" style="color: white;">
 	<div class="container">
 		<div class="row">
-			<center><div id="h">Transcript Form</div></center>
-			<div class="col-sm-8 col-sm-offset-2" style="background-color: #e6efef; padding-top: 2%;">
-				<form action="/action_page.php">
-					<div class="form-group" style="padding-top:1%;">
+		<center><div id="h">Transcript Form</div></center>
+			<div class="col-sm-8 col-sm-offset-2" style="background-color: #e6efef">
+				
+				<form action="/action_page.php" onsubmit="return trnsfinal(this)" onload="auto()">
+					<div class="form-group">
 			      		<fieldset>
 			      			<legend>Student's Details:</legend>
 			      			<div class="col-sm-12">
@@ -68,7 +146,7 @@
 					    			<label for="enrollment">Student's Enrollment ID<p id="s" style="display:inline">*</p></label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					    				<input type="text" class="form-control" id="enrollment" placeholder="Enter student's enrollment id" required>
+					    				<input type="text" class="form-control" id="enrollment" placeholder="15CE060" required>
 					      			</div>
 					      		</div>
 
@@ -78,7 +156,7 @@
 							    			<label for="fname">Student's Firstname<p id="s" style="display:inline">*</p></label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							      				<input type="text" class="form-control" id="fname" placeholder="Enter student's firstname" required>
+							      				<input type="text" class="form-control" id="fname" placeholder="Chintan" required>
 							      			</div>
 							      		</div>
 							      	</div>
@@ -88,7 +166,7 @@
 							    			<label for="lname">Student's Lastname<p id="s" style="display:inline">*</p></label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							    				<input type="text" class="form-control" id="lname" placeholder="Enter student's lastname" required>
+							    				<input type="text" class="form-control" id="lname" placeholder="Maniyar" required>
 							      			</div>
 							      		</div>
 							      	</div>
@@ -100,12 +178,22 @@
 							    	<div class="form-group">
 							    		<label>Institute<p id="s" style="display:inline">*</p></label>
 							    		
-							      			<input type="text" class="form-control" id="institute" placeholder="Enter Institute" required>
+							      			<input type="text" class="form-control" id="institute" placeholder="CSPIT" required>
 							      		
 							    	</div>
 							    </div>
 							    </div>
 							    <div class="row">
+<<<<<<< HEAD
+								    <div class="col-sm-12">
+								    	<div class="form-group">
+								    		<label>Programme:</label>
+						
+								      			<input type="text" class="form-control" id="programme" placeholder="B.Tech" required>
+								      		
+								    	</div>
+								    </div>
+=======
 							    <div class="col-sm-12">
 							    	<div class="form-group">
 							    		<label>Programme<p id="s" style="display:inline">*</p></label>
@@ -139,7 +227,9 @@
 							      		</div>
 							      	</div>
 							    </div>
+>>>>>>> cbe09fad98a73bd322dc9dcdf597fcd81b697d91
 							    </div>
+							</div>
 			      		</fieldset>
 			      	</div>
 
@@ -150,32 +240,32 @@
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Transcript</label>
-			      					<input type="checkbox" id="document" class="form-group" style="margin-left: 2%;">
-			      					<input type="Number" class="form-control" placeholder="Number of Transcript" disabled> 
+			      					<input type="checkbox" id="transcriptscheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="transcriptsno" type="Number" class="form-control" placeholder="No of Transcript" disabled="true" onclick="update(this.value, this.id);" onkeypress="update(this.value,this.id)" min="0" max="10" onkeydown="return false">
 			      				</div>
 			      			</div>
 
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Marksheet</label>
-			      					<input type="checkbox" id="document" class="form-group" style="margin-left: 2%;">
-			      					<input type="Number" class="form-control" placeholder="Number of Marksheet" disabled> 
+			      					<input type="checkbox" id="marksheetcheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="marksheetno" type="Number" class="form-control" placeholder="No of Marksheet" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
 			      				</div>
 			      			</div>
 
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Duplicate Marksheet</label>
-			      					<input type="checkbox" id="document" class="form-group" style="margin-left: 2%;">
-			      					<input type="Number" class="form-control" placeholder="Number of Duplicate Marksheet" disabled> 
+			      					<input type="checkbox" id="dmarksheetcheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="dmarksheetno" type="Number" class="form-control" placeholder="No of Duplicate Marksheet" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
 			      				</div>
 			      			</div>
 
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Degree Certificate</label>
-			      					<input type="checkbox" id="document" class="form-group" style="margin-left: 2%;">
-			      					<input type="Number" class="form-control" placeholder="Number of Degree Certificate" disabled> 
+			      					<input type="checkbox" id="dcerticheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="dcertino" type="Number" class="form-control" placeholder="No of Degree Certificate" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
 			      				</div>
 			      			</div>
 			      		</fieldset>
@@ -187,8 +277,13 @@
 
 			      			<div class="col-sm-12">
 			      				<div class="form-group">
+<<<<<<< HEAD
+			      					<label for="address">Contact Number:</label>
+			      					<input type="text" class="form-control" id="Contact_no" placeholder="Contact No" onchange="phonenumber()">
+=======
 			      					<label for="address">Contact Number<p id="s" style="display:inline">*</p></label>
 			      					<input type="text" class="form-control" id="m_no" placeholder="Contact No.">
+>>>>>>> cbe09fad98a73bd322dc9dcdf597fcd81b697d91
 			      				</div>
 			      			</div>
 
@@ -216,7 +311,7 @@
 					    			</div>
 
 					    			<div class="col-xs-4" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="p_code" placeholder="Pincode">
+					    				<input type="text" class="form-control" id="p_code" placeholder="Pincode" onchange="pincode()">
 					    			</div>
 
 					    			<div class="col-xs-5" style="padding-top: 2%;">
@@ -228,27 +323,45 @@
 
 			      		</fieldset>
 
+			      		<div class="form-group">
+			      		<fieldset>
+			      			<legend>Total Cost</legend>
+			      			<div class="col-sm-12">
+			      				<div class="form-group">
+			      					<label for="address">Rs:</label>
+			      					<input type="text" class="form-control" id="cost" placeholder="Cost" value="0" onclick="test()" disabled="true" min="0">
+			      				</div>
+			      			</div>
+			      		</fieldset>
+			      	</div>
+
 			      		<fieldset>
 			      		<legend></legend>
 			      		<div class="col-xs-offset-2 col-xs-4">
-							<div class="form group">
-								<input type="reset" class="btn btn-reset" value="Reset" id="reset" style="width: 90%; background-color: #8bb6ba; color: black;">
-		                        
-		                    </div>
-		                </div>
-		                <div class="col-xs-4">
-							<div class="form group">
-		                        <input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width: 90%; background-color: #386772; color: white;">
-		                    </div>
-		                </div>
+					<div class="form group">
+						<input type="reset" class="btn btn-reset" value="Reset" id="reset" style="width: 90%; background-color: #8bb6ba; color: black;">
+                        
+                    </div>
+                </div>
+                <div class="col-xs-4">
+					<div class="form group">
+                        <input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width: 90%; background-color: #386772; color: white;">
+                    </div>
+                </div>
 		                </fieldset>
 		                <hr>
 			      	</div>
+
+
+
+
+
 				</form>
 			</div>
 		</div>
 	</div>
 </section>
+
 
 <!-- =========================
     FOOTER SECTION   
