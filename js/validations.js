@@ -181,3 +181,16 @@ function autofill(){
 
 
 		}
+
+function authUni(){
+	
+	var mail = document.getElementById('university_email').value;
+	
+	if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) && String(mail).split('@')[1].split('.').includes('ac'))
+	{
+	  return (true);
+	}
+    alert("Please enter a valid email address!");
+    mail.focus();
+    return (false);
+}
