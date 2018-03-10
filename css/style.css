@@ -58,6 +58,7 @@ a {
 
 legend{
   color: #f9ba4d;
+  
 }
 
 label{
@@ -805,3 +806,6 @@ footer {
   opacity: 1;
   box-shadow: 5px 10px 8px grey;
  }
+.form-control{
+      background-color: #d7d8cb; 
+    }

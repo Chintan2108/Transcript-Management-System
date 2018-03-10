@@ -43,6 +43,7 @@
 
 	<!-- Main css -->
 	<link rel="stylesheet" href="../css/style.css">
+<<<<<<< HEAD:student/registration-student-form.php
 
 	<style>
 		.form-control{
@@ -74,6 +75,8 @@
 		}
 
 	</script>
+=======
+>>>>>>> a3898f8a2dabe19c4f3b109d257663b6cc995250:student/registration-student-form.html
 </head>
 <body style="background: linear-gradient(#2e6060,#99bbcc,#2e6060);" onload="dropdown_university()">
 
@@ -324,21 +327,21 @@
     FOOTER SECTION   
 ============================== -->
 
-<footer style="background-color: #132f38; height: 10px; margin-top: 2%; border-top:1px solid white;">
+<footer style="background-color: #132f38; height: 100%; margin-top: 5%; border-top:1px solid white;">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12">
 				<p class="wow fadeInUp" data-wow-delay="0.6s" style="color: #bfbfbf;">Copyright &copy; 2017 Coders</p>
 				<ul class="social-icon">
-					<li><a href="#" class="fa fa-facebook-official wow fadeInUp" data-wow-delay="1s" style="color: #bfbfbf;"></a></li>
-					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s" style="color: #bfbfbf;"></a></li>
-					<li><a href="#" class="fa fa-dribbble wow fadeInUp" data-wow-delay="1.6s" style="color: #bfbfbf;"></a></li>
-					<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s" style="color: #bfbfbf;"></a></li>
-					<li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="1.9s" style="color: #bfbfbf;"></a></li>
-					<li><a href="#" class="fa fa-github wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
-					<li><a href="#" class="fa fa-pinterest wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
-					<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://www.facebook.com" class="fa fa-facebook-official wow fadeInUp" data-wow-delay="1s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://twitter.com" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://dribbble.com/" class="fa fa-dribbble wow fadeInUp" data-wow-delay="1.6s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://www.behance.net/" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://in.linkedin.com" class="fa fa-linkedin wow fadeInUp" data-wow-delay="1.9s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://github.com" class="fa fa-github wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://in.pinterest.com" class="fa fa-pinterest wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
+					<li><a href="https://plus.google.com/discove" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s" style="color: #bfbfbf;"></a></li>
 				</ul>
 
 			</div>
