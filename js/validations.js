@@ -1,5 +1,6 @@
 function checkPass()
 {
+	//alert('checkPass')
 //Store the password field objects into variables ...
 	//alert('test');
 	var pass1 = document.getElementById('password');
@@ -15,11 +16,13 @@ function checkPass()
 //Set the color to the good color and inform
 //the user that they have entered the correct password
 		pass2.style.backgroundColor = goodColor;
+		return true;
 	}else{
 //The passwords do not match.
 //Set the color to the bad color and
 //notify the user.
 		pass2.style.backgroundColor = badColor;
+		return false;
 	}
 }
 
@@ -193,4 +196,33 @@ function authUni(){
     alert("Please enter a valid email address!");
     mail.focus();
     return (false);
+}
+
+function oldpass() {
+	var oldp = document.getElementById('currentpass');
+	var newp = document.getElementById('password');
+
+	//alert(oldp)
+	//alert(newp)
+
+	if(oldp.value == newp.value){
+		alert('New password cannot be the same as old password!');
+		newp.focus();
+		return false;
+	}
+}
+
+function pmatch(){
+	//alert('match');
+	p1 = document.getElementById('password');
+	p2 = document.getElementById('cpassword');
+
+	if(p1.value != p2.value){
+		alert('Passwords do not match!!');
+		return false;
+	}
+	else{
+		return true;
+	}
+	alert(p2.value)
 }
