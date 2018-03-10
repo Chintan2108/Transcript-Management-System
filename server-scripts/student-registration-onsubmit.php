@@ -1,4 +1,7 @@
 <?php	
+	
+	
+	require '../Mailer/PHPMailerAutoload.php';
 
 	$university = $_POST["university"];
 	$institute=$_POST["institute"];
@@ -27,39 +30,35 @@
 	//Retriving entries that match username and password.
 
 
-	require 'PHPMailerAutoload.php';
-	$mail = new PHPMailer;
-	$mail->isSMTP();                    // Set mailer to use SMTP
-	$mail->Host = 'smtp.mail.yahoo.com';  // Specify main and backup SMTP servers
-	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'transcripts_info@yahoo.com';                 // SMTP username
-	$mail->Password = 'transcripts12345';                           // SMTP password
-	$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 465;                                    // TCP port to connect to
-	$mail->SMTPDebug = 2;
-	$mail->setFrom('transcripts_info@yahoo.com', 'Team, TranscriptManagementSystem');
-	$mail->addAddress('15ce048@charusat.edu.in');     // Add a recipient
+	
+	$mail = new PHPMailer(); // create a new object
+	$mail->IsSMTP(); // enable SMTP
+	//$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+	$mail->SMTPAuth = true; // authentication enabled
+	$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+	$mail->Host = "smtp.googlemail.com";
+	$mail->Port = 465; // or 587
+	$mail->IsHTML(true);
+	$mail->Username = "deveshhatkar@gmail.com";
+	$mail->Password = "researchist";
+	$mail->SetFrom("deveshhatkar@gmail.com");
+	$mail->AddAddress($email);   // Add a recipient
 
 
-	$mail->Subject = 'Password Recovery';
-	$mail->Body    = "http://localhost//transcript//forgetPassword//change_forgotten_password.php?passkey=$email";
+	$mail->Subject = 'Confirmation Link | Transcript';
+	$mail->Body    = "http://localhost//git//Transcript-Management-System//server-scripts//student-registration-onconfirm.php?email=$email";
 	
 	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-	if(!$mail->send()) {
-	 	echo 'Message could not be sent.';
-	    echo 'Mailer Error: ' . $mail->ErrorInfo;
-	} else {
-		// PAGE WHICH WILL DISPLAY MESSAGE THAT MAIL HAS BEEN SENT.
-	    header("Location: check_mail.html ");
-	}
+	if($mail->send()) {
+	 	$query = "INSERT INTO temp_students (id, first_name, last_name, email, university_id, institute, programme, flat_no, building_name, street_no, street_name, city, postal_code, state, password, joining_year, graduation_year, contact_no) VALUES('$student_id', '$fname', '$lname', '$email', '$university', '$institute', '$programme', '$flat_no', '$building_name', '$street_no', '$street_name', '$city', '$p_code', '$state', '$password', '$join_year', '$grad_year', '$contact_no')";
+	 	header("Location: ../student/registration-student-ack.html");
+	} 
 	else
 	{
-		echo "This Email Id is not Registered!";
-		//ENTER THE PAGE FROM WHERE REGISTRATIO IS DONE.
-	    echo "Click here to <a href = '..registration_form.php..'> Register.";
+		echo "Error!";
 	}
 
 	
-	$query = "INSERT INTO temp_students ()";
+	
 ?>
