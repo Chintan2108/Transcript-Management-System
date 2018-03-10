@@ -1,3 +1,33 @@
+<?php
+
+	//Establishing connectionn with Database.
+	$conn = mysqli_connect("localhost", "root", "","tms");
+	if($conn -> connect_error)
+	{
+		die("Connection failed: " . $conn -> connect_error);
+	}
+
+	// Retriving University Names from the university table.
+	$query = "SELECT id, name from university";
+	$result = $conn->query($query);
+
+	$num_rows = $result->num_rows;
+
+	$university_names = array();
+	$university_id = array();
+
+	for ($i=0; $i < $num_rows; $i++) 
+	{ 
+		$row = $result->fetch_assoc();
+		$university_names[$i] = $row['name'];
+		$university_id[$i] = $row['id'];
+		//$message = $university_names[$i];
+		//echo "<script> alert('$message') </script>";
+	}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +49,33 @@
 			background-color: #d7d8cb; 
 		}
 	</style>
+
+	<script type="text/javascript">
+	
+		function dropdown_university()
+		{
+
+			var university_dropdown = document.getElementById("university");
+
+			var num_rows = <?php echo $num_rows; ?>;			
+
+			var university_names = JSON.parse('<?= json_encode($university_names) ?>');
+			var university_id = JSON.parse('<?= json_encode($university_id) ?>');
+			
+			for(var i = 0; i < num_rows; i++)
+			{
+				var option = document.createElement("option");
+
+				option.text = university_names[i];
+				option.value = university_id[i];
+
+				university_dropdown.appendChild(option);
+			}
+		}
+
+	</script>
 </head>
-<body style="background: linear-gradient(#2e6060,#99bbcc,#2e6060);">
+<body style="background: linear-gradient(#2e6060,#99bbcc,#2e6060);" onload="dropdown_university()">
 
 
 <!-- =========================
@@ -61,20 +116,16 @@
 			<center><div id="h">Student Registration Form</div></center>
 			<div class="col-sm-8 col-sm-offset-2" style="background-color: #e6efef; padding-top: 2%;">
 				
-				<form action="/action_page.php">
+				<form action="../server-scripts/student-registration-onsubmit.php" method="POST">
 					<div class="form-group" style="padding-top:1%;">
 						<fieldset>
 							<legend ">University Details:</legend>
 							<div class="col-sm-12">
 					    		<div class="form-group">
 					    			<label for="university">University:</label>
-					      			<select class="form-control">
+					      			<select name="university" class="form-control" id="university">
+
 					      				<option>--Select--</option>
-					      				<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
 					      			</select>
 					      		</div>
 				      		</div>
@@ -83,7 +134,7 @@
 						    			<label for="Institute">Institute:</label>
 						      			<div class="input-group">
 								    		<span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-								      		<input type="text" class="form-control" id="institute" required>
+								      		<input type="text" name="institute" class="form-control" required>
 								      	</div>
 						      		</div>
 					      		</div>
@@ -93,7 +144,7 @@
 						    			<label form="Programme">Programme:</label>
 						      			<div class="input-group">
 								    		<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-								      		<input type="text" class="form-control" id="institute" required>
+								      		<input type="text" name="programme" class="form-control" required>
 								      	</div>
 						      		</div>
 						      	</div>
@@ -112,7 +163,7 @@
 								    			<label for="join">Joining Year:</label>
 								    			<div class="input-group">
 								    				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-								      				<input type="month" class="form-control" id="join" required>
+								      				<input type="month" class="form-control" name="join_year" id="join" required>
 								      			</div>
 								      		</div>
 							      		</div>
@@ -122,7 +173,7 @@
 								    			<label for="graduation">Graduation Year:</label>
 								    			<div class="input-group">
 								    				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-								      				<input type="month" class="form-control" id="graduation" required>
+								      				<input type="month" class="form-control" id="graduation" name="grad_year" required>
 								      			</div>
 								      		</div>
 							      		</div>
@@ -140,7 +191,7 @@
 					    			<label for="enrollment">Student's Enrollment ID:</label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					    				<input type="text" class="form-control" id="enrollment" placeholder="Enter student's enrollment id" required>
+					    				<input type="text" name="student_id" class="form-control" id="enrollment" placeholder="Enter student's enrollment id" required>
 					      			</div>
 					      		</div>
 
@@ -150,7 +201,7 @@
 							    			<label for="fname">Student's Firstname:</label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							      				<input type="text" class="form-control" id="fname" placeholder="Enter student's firstname" required>
+							      				<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter student's firstname" required>
 							      			</div>
 							      		</div>
 							      	</div>
@@ -160,7 +211,7 @@
 							    			<label for="lname">Student's Lastname:</label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							    				<input type="text" class="form-control" id="lname" placeholder="Enter student's lastname" required>
+							    				<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter student's lastname" required>
 							      			</div>
 							      		</div>
 							      	</div>
@@ -170,7 +221,7 @@
 					    			<label for="enrollment">Student's Contact No:</label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-					    				<input type="text" class="form-control" id="Contact_no" placeholder="Enter student's contact no" required>
+					    				<input type="text" class="form-control" name="contact_no" id="Contact_no" placeholder="Enter student's contact no" required>
 					      			</div>
 					      		</div>
 
@@ -180,30 +231,30 @@
 
 				    			<div class="row">
 					    			<div class="col-xs-3">
-					    				<input type="text" class="form-control" id="b_no" placeholder="Flat No.">
+					    				<input type="text" class="form-control" name="flat_no" id="b_no" placeholder="Flat No.">
 					    			</div>
 					    			<div class="col-xs-9">		
-					    					<input type="text" class="form-control" id="b_name" placeholder="Building Name">
+					    					<input type="text" class="form-control" name="building_name" id="b_name" placeholder="Building Name">
 					    			</div>
 
 					    			<div class="col-xs-3" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="s_no" placeholder="Street No.">
+					    				<input type="text" class="form-control" name="street_no" id="s_no" placeholder="Street No.">
 					    			</div>
 
 					    			<div class="col-xs-9" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="s_name" placeholder="Street Name">
+					    				<input type="text" class="form-control" id="s_name" name="street_name" placeholder="Street Name">
 					    			</div>
 					    
 					    			<div class="col-xs-3" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="city" placeholder="City">
+					    				<input type="text" class="form-control" name="city" id="city" placeholder="City">
 					    			</div>
 
 					    			<div class="col-xs-4" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="p_code" placeholder="Pincode">
+					    				<input type="text" class="form-control" name="p_code" id="p_code" placeholder="Pincode">
 					    			</div>
 
 					    			<div class="col-xs-5" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="state" placeholder="State">
+					    				<input type="text" class="form-control" name="state" id="state" placeholder="State">
 					    			</div>
 				      			</div>
 					      	</div>
@@ -218,7 +269,7 @@
 					    			<label for="email">Email:</label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					      				<input type="email" class="form-control" id="email" placeholder="Enter email" required>
+					      				<input type="email" name="email" class="form-control" id="email" placeholder="Enter email" required>
 					      			</div>
 					      		</div>
 
@@ -228,7 +279,7 @@
 							    			<label for="password">Password:</label>
 							    			<div class="input-group">
 					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-					      						<input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+					      						<input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
 					      					</div>
 							      			
 							      		</div>
