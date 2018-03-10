@@ -122,10 +122,10 @@
 				<form action="../server-scripts/student-registration-onsubmit.php" method="POST">
 					<div class="form-group" style="padding-top:1%;">
 						<fieldset>
-							<legend ">University Details:</legend>
+							<legend ">University Details</legend>
 							<div class="col-sm-12">
 					    		<div class="form-group">
-					    			<label for="university">University:</label>
+					    			<label for="university">University<p id="s" style="display:inline">*</p></label>
 					      			<select name="university" class="form-control" id="university">
 
 					      				<option>--Select--</option>
@@ -134,7 +134,7 @@
 				      		</div>
 				      			<div class="col-sm-12">
 						      		<div class="form-group">
-						    			<label for="Institute">Institute:</label>
+						    			<label for="Institute">Institute<p id="s" style="display:inline">*</p></label>
 						      			<div class="input-group">
 								    		<span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
 								      		<input type="text" name="institute" class="form-control" required>
@@ -144,7 +144,7 @@
 					      	
 						      	<div class="col-sm-12">
 						      		<div class="form-group">
-						    			<label form="Programme">Programme:</label>
+						    			<label form="Programme">Programme<p id="s" style="display:inline">*</p></label>
 						      			<div class="input-group">
 								    		<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
 								      		<input type="text" name="programme" class="form-control" required>
@@ -157,13 +157,13 @@
 
 		      		<div class="form-group">
 			      		<fieldset>
-							<legend>Joining and Graduation Year:</legend>
+							<legend>Joining and Graduation Year<p id="s" style="display:inline">*</p></legend>
 							<div class="col-sm-12">	
 								<div class="row">
 						      		<div class="form-inline">
 										<div class="col-sm-5">			      		
 								      		<div class="form-group">
-								    			<label for="join">Joining Year:</label>
+								    			<label for="join">Joining Year<p id="s" style="display:inline">*</p></label>
 								    			<div class="input-group">
 								    				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 								      				<input type="month" class="form-control" name="join_year" id="join" required>
@@ -173,7 +173,7 @@
 							      		
 							      		<div class="col-sm-5">
 								      		<div class="form-group">
-								    			<label for="graduation">Graduation Year:</label>
+								    			<label for="graduation">Graduation Year<p id="s" style="display:inline">*</p></label>
 								    			<div class="input-group">
 								    				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 								      				<input type="month" class="form-control" id="graduation" name="grad_year" required>
@@ -191,7 +191,7 @@
 			      			<legend>Student's Details:</legend>
 			      			<div class="col-sm-12">
 					      		<div class="form-group">
-					    			<label for="enrollment">Student's Enrollment ID:</label>
+					    			<label for="enrollment">Student's Enrollment ID<p id="s" style="display:inline">*</p></label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
 					    				<input type="text" name="student_id" class="form-control" id="enrollment" placeholder="Enter student's enrollment id" required>
@@ -201,7 +201,7 @@
 					      		<div class="row">
 					      			<div class="col-sm-6">
 							      		<div class="form-group">
-							    			<label for="fname">Student's Firstname:</label>
+							    			<label for="fname">Student's Firstname<p id="s" style="display:inline">*</p></label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 							      				<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter student's firstname" required>
@@ -211,7 +211,7 @@
 
 							      	<div class="col-sm-6">
 							      		<div class="form-group">
-							    			<label for="lname">Student's Lastname:</label>
+							    			<label for="lname">Student's Lastname<p id="s" style="display:inline">*</p></label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 							    				<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter student's lastname" required>
@@ -221,7 +221,7 @@
 							    </div>
 
 							    <div class="form-group">
-					    			<label for="enrollment">Student's Contact No:</label>
+					    			<label for="enrollment">Student's Contact No<p id="s" style="display:inline">*</p></label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
 					    				<input type="text" class="form-control" name="contact_no" id="Contact_no" placeholder="Enter student's contact no" required>
@@ -229,7 +229,7 @@
 					      		</div>
 
 				      			<div class="form-group">
-				    				<label for="address">Address:</label>
+				    				<label for="address">Address<p id="s" style="display:inline">*</p></label>
 				    			
 
 				    			<div class="row">
@@ -269,7 +269,7 @@
 			      			<legend>Email and Password</legend>
 			      			<div class="col-sm-12">
 					      		<div class="form-group">
-					    			<label for="email">Email:</label>
+					    			<label for="email">Email<p id="s" style="display:inline">*</p></label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 					      				<input type="email" name="email" class="form-control" id="email" placeholder="Enter email" required>
@@ -279,7 +279,7 @@
 						      	<div class="row">
 					      			<div class="col-sm-6">
 							      		<div class="form-group">
-							    			<label for="password">Password:</label>
+							    			<label for="password">Password<p id="s" style="display:inline">*</p></label>
 							    			<div class="input-group">
 					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 					      						<input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
@@ -290,7 +290,7 @@
 
 							      	<div class="col-sm-6">
 										<div class="form-group">
-							    			<label for="cpassword">Confirm Password:</label>
+							    			<label for="cpassword">Confirm Password<p id="s" style="display:inline">*</p></label>
 							      			<div class="input-group">
 					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 					      						<input type="password" class="form-control" id="cpassword" placeholder="Confirm your password" required>

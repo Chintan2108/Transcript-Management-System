@@ -58,6 +58,7 @@ a {
 
 legend{
   color: #f9ba4d;
+  
 }
 
 label{
@@ -151,7 +152,6 @@ footer {
 }
 
 .parallax-section {
-     background: linear-gradient(#2e6060,#99bbcc,#2e6060);
   background-attachment: fixed !important;
   background-size: cover !important;
 }
@@ -279,11 +279,10 @@ footer {
     Intro section              
 -----------------------------------------*/
 #intro {
-    background:url("../images/2.jpg");
+    background-color: white;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
-
     color: #ffffff;
     display: -webkit-box;
     display: -webkit-flex;
@@ -295,7 +294,6 @@ footer {
           align-items: center;
     height: 100vh;
     text-align: center;
-    opacity: 0.95;
 }
 
 #intro h3 {
@@ -355,7 +353,7 @@ h3{
    Speakers section              
 -----------------------------------------*/
 #speakers {
-   background: linear-gradient(#2e6060,#99bbcc,#2e6060);
+    background: #f9f9f9;
 }
 
 #speakers h3 {
@@ -369,9 +367,9 @@ h3{
 }
 
 #speakers img {
-  width: 200px;
-  
-  height: 180px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 #speakers .col-md-3 {
@@ -392,9 +390,6 @@ h3{
 /*---------------------------------------
    Program section              
 -----------------------------------------*/
-#program{
-  background: linear-gradient(#2e6060,#99bbcc,#2e6060);
-}
 #program h4 {
     color: #808080;
     font-size: 12px;
@@ -455,7 +450,7 @@ h3{
     Regsiter section              
 -----------------------------------------*/
 #register {
-    background: linear-gradient(#2e6060,#99bbcc,#2e6060);
+    background: url('../images/register-bg.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -496,7 +491,7 @@ h3{
    Faq section              
 -----------------------------------------*/
 #faq {
-     background: linear-gradient(#2e6060,#99bbcc,#2e6060);
+  background: #f9f9f9;
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
@@ -561,7 +556,7 @@ h3{
    Venue section              
 -----------------------------------------*/
 #venue {
-       background: linear-gradient(#2e6060,#99bbcc,#2e6060);
+    background: url('../images/venue-bg.jpg') 50% 0 repeat-y fixed;
     background-size: cover;
     background-position: center center;
     padding-top: 7rem;
@@ -588,7 +583,7 @@ h3{
    Contact section              
 -----------------------------------------*/
 #contact {
-       background: linear-gradient(#2e6060,#99bbcc,#2e6060);
+    background: url('../images/contact-bg.jpg') 50% 0 repeat-y fixed;
     background-size: cover;
     background-position: center center;
 }
@@ -811,3 +806,6 @@ footer {
   opacity: 1;
   box-shadow: 5px 10px 8px grey;
  }
+.form-control{
+      background-color: #d7d8cb; 
+    }
