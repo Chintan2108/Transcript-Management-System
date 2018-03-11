@@ -50,6 +50,9 @@
 		.form-control{
 			background-color: #d7d8cb; 
 		}
+		#s{
+			color: red;
+		}
 	</style>
 
 	<script type="text/javascript">
