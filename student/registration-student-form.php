@@ -38,12 +38,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<script src="../js/validations.js"></script>
+
 	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
 
 	<!-- Main css -->
 	<link rel="stylesheet" href="../css/style.css">
-<<<<<<< HEAD:student/registration-student-form.php
 
 	<style>
 		.form-control{
@@ -75,8 +76,7 @@
 		}
 
 	</script>
-=======
->>>>>>> a3898f8a2dabe19c4f3b109d257663b6cc995250:student/registration-student-form.html
+
 </head>
 <body style="background: linear-gradient(#2e6060,#99bbcc,#2e6060);" onload="dropdown_university()">
 
@@ -119,7 +119,7 @@
 			<center><div id="h">Student Registration Form</div></center>
 			<div class="col-sm-8 col-sm-offset-2" style="background-color: #e6efef; padding-top: 2%;">
 				
-				<form action="../server-scripts/student-registration-onsubmit.php" method="POST">
+				<form action="../server-scripts/student-registration-onsubmit.php" method="POST" onsubmit="return stufinal()">
 					<div class="form-group" style="padding-top:1%;">
 						<fieldset>
 							<legend ">University Details</legend>
@@ -224,7 +224,7 @@
 					    			<label for="enrollment">Student's Contact No<p id="s" style="display:inline">*</p></label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-					    				<input type="text" class="form-control" name="contact_no" id="Contact_no" placeholder="Enter student's contact no" required>
+					    				<input type="text" class="form-control" name="contact_no" id="Contact_no" placeholder="Enter student's contact no" onchange="phonenumber()" required>
 					      			</div>
 					      		</div>
 
@@ -253,7 +253,7 @@
 					    			</div>
 
 					    			<div class="col-xs-4" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" name="p_code" id="p_code" placeholder="Pincode">
+					    				<input type="text" class="form-control" name="p_code" id="p_code" placeholder="Pincode" onchange="pincode()" required>
 					    			</div>
 
 					    			<div class="col-xs-5" style="padding-top: 2%;">
@@ -272,7 +272,7 @@
 					    			<label for="email">Email<p id="s" style="display:inline">*</p></label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					      				<input type="email" name="email" class="form-control" id="email" placeholder="Enter email" required>
+					      				<input type="email" name="email" class="form-control" id="email" placeholder="Enter email" onchange="ValidateEmail()" required>
 					      			</div>
 					      		</div>
 
@@ -293,7 +293,7 @@
 							    			<label for="cpassword">Confirm Password<p id="s" style="display:inline">*</p></label>
 							      			<div class="input-group">
 					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-					      						<input type="password" class="form-control" id="cpassword" placeholder="Confirm your password" required>
+					      						<input type="password" class="form-control" id="cpassword" placeholder="Confirm your password" onkeyup="checkPass()" required>
 					      					</div>
 
 							      		</div>
