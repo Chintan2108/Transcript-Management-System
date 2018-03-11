@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2018 at 08:31 AM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.1.12
+-- Generation Time: Mar 11, 2018 at 05:26 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.5.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `tms`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gtu`
+--
+
+CREATE TABLE `gtu` (
+  `student_id` varchar(20) NOT NULL,
+  `name` varchar(40) DEFAULT NULL,
+  `email` varchar(40) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gtu`
+--
+
+INSERT INTO `gtu` (`student_id`, `name`, `email`) VALUES
+('15ce040', 'Devesh Hatkar', '15ce040@charusat.edu.in'),
+('15ce048', 'Vedaant Joshi', '15ce048@charusat.edu.in'),
+('15ce111', 'VRAJESH RAMI', '15ce111@charusat.edu.in');
 
 -- --------------------------------------------------------
 
@@ -54,8 +73,9 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `first_name`, `last_name`, `email`, `university_id`, `institute`, `programme`, `flat_no`, `building_name`, `street_no`, `street_name`, `city`, `postal_code`, `state`, `password`, `joining_year`, `graduation_year`, `contact_no`) VALUES
-('001', 'Vedaant', 'Joshi', '15ce048@charusat.edu.in', '001', 'Technology', 'Btech', '10', 'asdf', 'adsf', 'asdf', 'asdf', '390009', 'Gujarat', 'vedaant', '0000-00-00', '0000-00-00', '99999999999'),
-('002', 'Vrajesh', 'Rami', '15ce111@charusat.edu.in', '001', 'Technology', 'Btech', '10', 'asdf', 'adsf', 'asdf', 'asdf', '390009', 'Gujarat', 'rami', '0000-00-00', '0000-00-00', '99999999999');
+('15ce040', 'Devesh', 'Hatkar', '15ce040@charusat.edu.in', '001', 'CSPIT', 'BTECH', '6', 'qa', '1', 'ama', 'anand', '388001', 'Gujarat', 'dev', '2016-07-12', '2020-08-12', '8866633450'),
+('15ce048', 'vedaant', 'joshi', '15ce048@charusat.edu.in', '001', 'cspit', 'prog', 'a', 'a', 'a', 'a', 'a', '390020', 'guj', 'asd', '0000-00-00', '0000-00-00', '9998217232'),
+('15ce111', 'v', 'r', '15ce111@charusat.edu.in', '002', 'dD', 'd', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'as', '0000-00-00', '0000-00-00', '9998217232');
 
 -- --------------------------------------------------------
 
@@ -131,9 +151,8 @@ CREATE TABLE `transcript_request` (
 --
 
 INSERT INTO `transcript_request` (`id`, `student_id`, `flat_no`, `building_name`, `street_no`, `street_name`, `city`, `postal_code`, `state`, `marksheet`, `duplicate_marksheet`, `transcript`, `degree_certificate`, `university_approval_status`, `payment_status`, `status`, `date_of_request`, `university_id`, `contact_no`) VALUES
-('001', '001', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 1, 0, 'pending', 'pending', 'pending', '2017-12-06', '001', NULL),
-('002', '001', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 2, 0, 'pending', 'pending', 'pending', '2017-12-06', '001', NULL),
-('003', '002', '10', 'absb', 'absb', 'absb', 'anand', '381811', 'Gujarat', 1, 1, 2, 0, 'pending', 'pending', 'pending', '2017-12-06', '001', NULL);
+('1', '15ce111', '12 ', 'yoshaan', '12', 'akota', 'vadodara', '390007', 'Gujarat', 1, 0, 1, 0, 'false', 'false', 'false', '2018-03-08', '002', '9558490258'),
+('2', '15ce048', '4', 'abc', '4', 'xyz', 'anand', '388001', 'Gujarat', 1, 0, 0, 0, 'false', 'false', 'false', '2018-03-08', '003', '9558490258');
 
 -- --------------------------------------------------------
 
@@ -164,6 +183,12 @@ INSERT INTO `university` (`id`, `name`, `address`, `logo`, `email`, `password`) 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `gtu`
+--
+ALTER TABLE `gtu`
+  ADD PRIMARY KEY (`student_id`);
 
 --
 -- Indexes for table `students`
@@ -227,7 +252,6 @@ ALTER TABLE `transcript_cost`
 ALTER TABLE `transcript_request`
   ADD CONSTRAINT `transcript_request_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
   ADD CONSTRAINT `university_id_foreign_key_cons` FOREIGN KEY (`university_id`) REFERENCES `university` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

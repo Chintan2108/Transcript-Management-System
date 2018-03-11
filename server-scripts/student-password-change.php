@@ -17,5 +17,7 @@
 
 	header("Location: password-change-msg.html");
 	
-	
+	header("Location: ../index.html");
+	echo "<script>alert('password changed!!!');</script>";
+
 ?>
