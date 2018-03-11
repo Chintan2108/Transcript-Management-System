@@ -27,7 +27,7 @@ function checkPass()
 }
 
 function password(){
-	alert('password');
+	//alert('password');
 	var pass1 = document.getElementById('password');
 	var pass2 = document.getElementById('cpassword');
 
@@ -76,6 +76,7 @@ function phonenumber()
       else  
         {  
         alert("Please enter a valid mobile number!");  
+        mob.focus();
         return false;  
         }  
 }

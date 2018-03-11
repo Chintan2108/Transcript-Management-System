@@ -14,6 +14,8 @@
 	//verify email valid or not.
 	$query = "UPDATE students SET password='$password' WHERE email='$email'";
 	$result = $conn -> query($query);
+
+	header("Location: password-change-msg.html");
 	
 	header("Location: ../index.html");
 	echo "<script>alert('password changed!!!');</script>";

@@ -35,7 +35,7 @@ $conn = mysqli_connect("localhost", "root", "","tms");
 
 		if($mail->send())
 		{
-			echo "<script>alert('This EMAIL is not registered !!!');</script>";
+
 	 		header("Location: ../forgotpassword-linksent.html");
 		} 
 		else
@@ -46,6 +46,7 @@ $conn = mysqli_connect("localhost", "root", "","tms");
 	else
 	{
 		echo "<script>alert('This EMAIL is not registered !!!');</script>";
+
 	}
 
 

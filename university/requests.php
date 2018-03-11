@@ -1,3 +1,55 @@
+<?php
+
+	$conn = mysqli_connect("localhost", "root", "","tms");
+	if($conn -> connect_error)
+	{
+		die("Connection failed: " . $conn -> connect_error);
+	}
+	
+	$query_uni_id = "SELECT id FROM university WHERE email = 'charusat@gmail.com'";
+	$result = $conn -> query($query_uni_id);
+	$row = $result->fetch_assoc();
+	$university_id = $row['id'];
+
+	$query_transcripts = "SELECT students.first_name, students.last_name, transcript_request.flat_no, transcript_request.building_name, transcript_request.street_no, transcript_request.street_name, transcript_request.city, transcript_request.postal_code, transcript_request.state, date_of_request, transcript_request.university_id, university_approval_status, payment_status, marksheet, duplicate_marksheet, transcript, degree_certificate FROM transcript_request, students WHERE  transcript_request.university_id = '$university_id' AND transcript_request.student_id = students.id";
+
+	$result = $conn->query($query_transcripts);
+
+	
+
+	$studentName = array();
+	$deliveryAddress = array();
+	$requestDate = array();
+	$approvalFlag = array();
+	$paymentFlag = array();
+	$Transcripts = array();
+	$Marksheets = array();
+	$DuplicateMarksheets = array();
+	$DegreeCertificates = array();
+	$n = $result -> num_rows;
+
+	for ($i=0; $i < $result->num_rows; $i++) { 
+		# code...
+		$row = $result->fetch_assoc();
+
+		$studentName[$i] = $row['first_name'] . ' ' . $row['last_name'];
+		$deliveryAddress[$i] = $row['flat_no'] . ', ' . $row['building_name'] . ', ' . $row['street_no'] . ', ' . $row['street_name'] . ', ' . $row['city'] . ', ' . $row['postal_code'] . ', ' . $row['state'] . '';
+		$requestDate[$i] = $row['date_of_request'];
+		$approvalFlag[$i] = $row['university_approval_status'];
+		$paymentFlag[$i] = $row['payment_status'];
+		$Transcripts[$i] = $row['transcript'];
+		$Marksheets[$i] = $row['marksheet'];
+		$DuplicateMarksheets[$i] = $row['duplicate_marksheet'];
+		$DegreeCertificates[$i] = $row['degree_certificate'];
+	}
+
+	//echo $paymentFlag[0] . ' ' . $paymentFlag[1];
+	//echo $DegreeCertificates[0];
+	
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +59,9 @@
 	<script type="text/javascript">
 		function GenerateTable() {
 
-			var rows = 5;
-			//var rows = <?php echo json_encode($n); ?>
+			//var rows = 5;
+			var rows = <?php echo json_encode($n); ?>;
+			alert(rows);
 			var goTable = document.getElementById('goTable');
 
 			//fetching modal elements for each transcript details
@@ -21,25 +74,24 @@
 				
 				text = document.createTextNode('Pending Requests');
 				h2.appendChild(text);
-				goTable.appendChild(h2)
+				goTable.appendChild(h2);
 
 				var table = document.createElement('table');
 				table.border = 2;
 				table.align = "center";
 				table.setAttribute('style', "border-color:#386772");
 				table.setAttribute('style', "background-color: #e6efef");		
-				var studentName = "null"; //array here
-				//var studentName = <?php echo json_encode(studentName); ?>;
-				var deliveryAddress = "null";  //array here
-				//var deliveryAddress = <?php echo json_encode(deliveryAddress); ?>;
+				//var studentName = "null"; //array here
+				var studentName = JSON.parse('<?= json_encode($studentName) ?>')
+				//var deliveryAddress = "null";  //array here
+				var deliveryAddress = JSON.parse('<?= json_encode($deliveryAddress) ?>')
 				var transcriptDetails = "null";  //array here (no of transcripts, degree certis, marksheets)
-				//var transcriptDetails = <?php echo json_encode(transcriptDetails); ?>;
-				var requestDate ="null" //array of request dates of all requests by distinct students
-				//var requestDate = <?php echo json_encode(requestDate); ?>;
-				var approvalFlag = [1,0,0,1,1];
-				//var approvalFlag = <?php echo json_encode(approvalFlag)?>
-				var paymentFlag = "null";
-				//var paymentFlag = <?php echo json_encode(paymentFlag); ?>;
+				//var requestDate ="null" //array of request dates of all requests by distinct students
+				var requestDate = JSON.parse('<?= json_encode($requestDate); ?>')
+				//var approvalFlag = [1,0,0,1,1];
+				var approvalFlag = JSON.parse('<?= json_encode($approvalFlag);?>')
+				//var paymentFlag = "null";
+				var paymentFlag = JSON.parse('<?= json_encode($paymentFlag); ?>')
 
 				var tr1 = document.createElement('tr');
 				var th1 = document.createElement('th');
@@ -102,9 +154,9 @@
 					td5.setAttribute('style',"width: 160px;height: 50px;margin-top:5px;margin-right:5px;padding-left:10px;margin-bottom:5px;color:#193d2e");
 					var studentNametxt = document.createTextNode("studentNametxt " + i);
 
-					//var studentNametxt = document.createTextNode(studentName[i]);
-					var deliveryAddresstxt = document.createTextNode("deliveryAddresstxt " + i);
-					//var deliveryAddresstxt = document.createTextNode(deliveryAddress[i]);
+					var studentNametxt = document.createTextNode(studentName[i]);
+					//var deliveryAddresstxt = document.createTextNode("deliveryAddresstxt " + i);
+					var deliveryAddresstxt = document.createTextNode(deliveryAddress[i]);
 					var transcriptDetailstxt = document.createTextNode("transcriptDetailstxt " + i);
 					//var transcriptDetails = document.createTextNode(transcriptDetails[i]);
 					//text 1
@@ -187,18 +239,18 @@
 			var span = document.getElementById(spanid);
 			
 			//parse arrays form php
-			var studentName = [1,2,3,4,5];
-			//var studentName = <?php echo json_encode($studentName); ?>;
-			var requestDate = [1,2,3,4,5];
-			//var requestDate = <?php echo json_encode($requestDate); ?>;
-			var Transcripts = [1,2,3,4,5];
-			//var Transcripts = <?php echo json_encode($Transcripts); ?>;
-			var Marksheets = [1,2,3,4,5];
-			//var Marksheets = <?php echo json_encode($Marksheets); ?>;
-			var DuplicateMarksheets = [1,2,3,4,5];
-			//var DuplicateMarksheets = <?php echo json_encode($DuplicateMarksheets); ?>;
-			var DegreeCertificates = [1,2,3,4,5];
-			//var DegreeCertificates = <?php echo json_encode($DegreeCertificates); ?>;
+			//var studentName = [1,2,3,4,5];
+			var studentName = <?php echo json_encode($studentName); ?>;
+			//var requestDate = [1,2,3,4,5];
+			var requestDate = <?php echo json_encode($requestDate); ?>;
+			//var Transcripts = [1,2,3,4,5];
+			var Transcripts = <?php echo json_encode($Transcripts); ?>;
+			//var Marksheets = [1,2,3,4,5];
+			var Marksheets = <?php echo json_encode($Marksheets); ?>;
+			//var DuplicateMarksheets = [1,2,3,4,5];
+			var DuplicateMarksheets = <?php echo json_encode($DuplicateMarksheets); ?>;
+			//var DegreeCertificates = [1,2,3,4,5];
+			var DegreeCertificates = <?php echo json_encode($DegreeCertificates); ?>;
 
 			//Update modal content everytime, using the name
 			index = parseInt(btnid.substr(btnid.length-1));
@@ -208,7 +260,7 @@
 			document.getElementById('Marksheets').innerHTML = String(Marksheets[index]);
 			document.getElementById('DuplicateMarksheets').innerHTML = String(DuplicateMarksheets[index]);
 			document.getElementById('DegreeCertificates').innerHTML = String(DegreeCertificates[index]);
-			document.getElementById('total').innerHTML = String(Transcripts[index]+Marksheets[index]+DegreeCertificates[index]);
+			document.getElementById('total').innerHTML = String(parseInt(Transcripts[index])+parseInt(Marksheets[index])+parseInt(DegreeCertificates[index]));
 			// When the user clicks on the button, open the modal
 			{
 			    modal.style.display = "block";
