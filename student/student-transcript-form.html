@@ -126,7 +126,7 @@
 		<div class="row">
 		<center><div id="h">Transcript Form</div></center>
 			<div class="col-sm-8 col-sm-offset-2" style="background-color: #e6efef">
-				<form action="/action_page.php" onsubmit="return trnsfinal(this)" onload="auto()">
+				<form action="../server-scripts/transcripts-request-onsubmit.php" method="GET" onsubmit="return trnsfinal(this)" onload="auto()">
 					<div class="form-group">
 			      		<fieldset>
 			      			<legend>Student's Details:</legend>
@@ -135,7 +135,7 @@
 					    			<label for="enrollment">Student's Enrollment ID:</label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					    				<input type="text" class="form-control" id="enrollment" placeholder="15CE060" required>
+					    				<input type="text" name="student_id" class="form-control" id="enrollment" placeholder="15CE060" value="asdf" required>
 					      			</div>
 					      		</div>
 
@@ -145,7 +145,7 @@
 							    			<label for="fname">Student's Firstname:</label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							      				<input type="text" class="form-control" id="fname" placeholder="Chintan" required>
+							      				<input type="text" name="fname" value="fname" class="form-control" id="fname" placeholder="Chintan" required>
 							      			</div>
 							      		</div>
 							      	</div>
@@ -155,7 +155,7 @@
 							    			<label for="lname">Student's Lastname:</label>
 							    			<div class="input-group">
 							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							    				<input type="text" class="form-control" id="lname" placeholder="Maniyar" required>
+							    				<input type="text" name="lname" value="lname" class="form-control" id="lname" placeholder="Maniyar" required>
 							      			</div>
 							      		</div>
 							      	</div>
@@ -167,7 +167,7 @@
 							    	<div class="form-group">
 							    		<label>Institute:</label>
 							    		
-							      			<input type="text" class="form-control" id="institute" placeholder="CSPIT" required>
+							      			<input type="text" name="institute" value="institute" class="form-control" id="institute" placeholder="CSPIT" required>
 							      		
 							    	</div>
 							    </div>
@@ -177,7 +177,7 @@
 								    	<div class="form-group">
 								    		<label>Programme:</label>
 						
-								      			<input type="text" class="form-control" id="programme" placeholder="B.Tech" required>
+								      			<input type="text" name="programme" value="programme" class="form-control" id="programme" placeholder="B.Tech" required>
 								      		
 								    	</div>
 								    </div>
@@ -193,32 +193,32 @@
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Transcript</label>
-			      					<input type="checkbox" id="transcriptscheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
-			      					<input id="transcriptsno" type="Number" class="form-control" placeholder="No of Transcript" disabled="true" onclick="update(this.value, this.id);" onkeypress="update(this.value,this.id)" min="0" max="10" onkeydown="return false">
+			      					<input type="checkbox" name="transcriptscheck" id="transcriptscheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="transcriptsno" name="no_of_transcript" type="Number" class="form-control" placeholder="No of Transcript" disabled="true" onclick="update(this.value, this.id);" onkeypress="update(this.value,this.id)" min="0" max="10" onkeydown="return false">
 			      				</div>
 			      			</div>
 
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Marksheet</label>
-			      					<input type="checkbox" id="marksheetcheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
-			      					<input id="marksheetno" type="Number" class="form-control" placeholder="No of Marksheet" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
+			      					<input type="checkbox" name="marksheetcheck" id="marksheetcheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="marksheetno"  name="no_of_marksheet" type="Number" class="form-control" placeholder="No of Marksheet" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
 			      				</div>
 			      			</div>
 
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Duplicate Marksheet</label>
-			      					<input type="checkbox" id="dmarksheetcheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
-			      					<input id="dmarksheetno" type="Number" class="form-control" placeholder="No of Duplicate Marksheet" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
+			      					<input type="checkbox" name="dmarksheetcheck" id="dmarksheetcheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="dmarksheetno" name="no_of_dmarksheet" type="Number" class="form-control" placeholder="No of Duplicate Marksheet" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
 			      				</div>
 			      			</div>
 
 			      			<div class="col-sm-6">
 			      				<div class="form-group">
 			      					<label>Degree Certificate</label>
-			      					<input type="checkbox" id="dcerticheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
-			      					<input id="dcertino" type="Number" class="form-control" placeholder="No of Degree Certificate" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
+			      					<input type="checkbox" name="dcerticheck" id="dcerticheck" class="form-group" style="margin-left: 2%;" onclick="autofill()">
+			      					<input id="dcertino" name="no_of_dcerticheck" type="Number" class="form-control" placeholder="No of Degree Certificate" disabled="true" onclick="update(this.value, this.id);" min="0" max="10" onkeydown="return false"> 
 			      				</div>
 			      			</div>
 			      		</fieldset>
@@ -231,7 +231,7 @@
 			      			<div class="col-sm-12">
 			      				<div class="form-group">
 			      					<label for="address">Contact Number<p style="display: inline;color: red">*</p></label>
-			      					<input type="text" class="form-control" id="Contact_no" placeholder="Contact No" onchange="phonenumber()">
+			      					<input type="text" name="contact_no" class="form-control" id="Contact_no" placeholder="Contact No" onchange="phonenumber()">
 			      				</div>
 			      			</div>
 
@@ -240,30 +240,30 @@
 				    				<label for="address">Address<p style="display: inline;color: red">*</p></label>
 				    			<div class="row">
 					    			<div class="col-xs-3">
-					    				<input type="text" class="form-control" id="b_no" placeholder="Flat No.">
+					    				<input type="text" class="form-control" name="flat_no" id="b_no" placeholder="Flat No.">
 					    			</div>
 					    			<div class="col-xs-9">		
-					    					<input type="text" class="form-control" id="b_name" placeholder="Building Name">
+					    					<input type="text" class="form-control" name="b_name" id="b_name" placeholder="Building Name">
 					    			</div>
 
 					    			<div class="col-xs-3" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="s_no" placeholder="Street No.">
+					    				<input type="text" class="form-control" id="s_no" name="street_no" placeholder="Street No.">
 					    			</div>
 
 					    			<div class="col-xs-9" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="s_name" placeholder="Street Name">
+					    				<input type="text" class="form-control" id="s_name" name="street_name" placeholder="Street Name">
 					    			</div>
 					    
 					    			<div class="col-xs-3" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="city" placeholder="City">
+					    				<input type="text" class="form-control" id="city" name="city" placeholder="City">
 					    			</div>
 
 					    			<div class="col-xs-4" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="p_code" placeholder="Pincode" onchange="pincode()">
+					    				<input type="text" class="form-control" id="p_code" name="p_code" placeholder="Pincode" onchange="pincode()">
 					    			</div>
 
 					    			<div class="col-xs-5" style="padding-top: 2%;">
-					    				<input type="text" class="form-control" id="state" placeholder="State">
+					    				<input type="text" class="form-control" name="state" id="state" placeholder="State">
 					    			</div>
 				      			</div>
 				      			</div>
