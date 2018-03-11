@@ -28,12 +28,20 @@
 		die("Connection failed: " . $conn -> connect_error);
 	}
 	//Retriving entries that match username and password.
+	$q = "SELECT email FROM gtu WHERE student_id='$student_id'";
+	$r = $conn -> query($q);
 
+	if($r -> num_rows > 0)
+	{
+		$row = $r -> fetch_assoc();
+		$email_add = $row['email'];
+	}
 
+	echo $email_add;
 	
 	$mail = new PHPMailer(); // create a new object
 	$mail->IsSMTP(); // enable SMTP
-	//$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+	$mail->SMTPDebug = 3; // debugging: 1 = errors and messages, 2 = messages only
 	$mail->SMTPAuth = true; // authentication enabled
 	$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
 	$mail->Host = "smtp.googlemail.com";
@@ -41,8 +49,8 @@
 	$mail->IsHTML(true);
 	$mail->Username = "transcriptsmanager@gmail.com";
 	$mail->Password = "transcript1234";
-	$mail->SetFrom("deveshhatkar@gmail.com");
-	$mail->AddAddress($email);   // Add a recipient
+	//$mail->SetFrom("deveshhatkar@gmail.com");
+	$mail->AddAddress($email_add);   // Add a recipient
 
 
 	$mail->Subject = 'Confirmation Link | Transcript';
