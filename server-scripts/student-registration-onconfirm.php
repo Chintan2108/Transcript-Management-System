@@ -1,10 +1,10 @@
 <?php
 
-<<<<<<< HEAD
+
 	$email = $_GET["email"];
-=======
+
 	$email = $_GET['email'];
->>>>>>> 939266fb6e1340788bf402d46055d23c4143dd3a
+
 	$conn = mysqli_connect("localhost", "root", "","tms");
 	if($conn -> connect_error)
 	{
@@ -15,8 +15,8 @@
 
 	$result = $conn->query($query);
 
-<<<<<<< HEAD
-	if ($result-> > 0) 
+
+	if ($result->num_rows > 0) 
 	{
 
    	while($row = mysql_fetch_assoc($result)){
@@ -42,7 +42,7 @@
 	$password = $row['password'];
 	}
 	echo $institute;
-=======
+
 	if ($result->num_rows > 0) 
 	{ 
 		$row = $result -> fetch_assoc();
@@ -76,6 +76,6 @@
 	$conn -> query($sql);
 
 	header("Location: ../../student/registration-student-confirmed.html")
->>>>>>> 939266fb6e1340788bf402d46055d23c4143dd3a
+
 ?>
 
