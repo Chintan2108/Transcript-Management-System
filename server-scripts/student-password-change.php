@@ -15,5 +15,7 @@
 	$query = "UPDATE students SET password='$password' WHERE email='$email'";
 	$result = $conn -> query($query);
 	
-	
+	header("Location: ../index.html");
+	echo "<script>alert('password changed!!!');</script>";
+
 ?>
