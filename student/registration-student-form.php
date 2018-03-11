@@ -269,13 +269,13 @@
 
 			      	<div class="form-group">
 			      		<fieldset>
-			      			<legend>Email and Password</legend>
+			      			<legend>Choose Username and Password</legend>
 			      			<div class="col-sm-12">
 					      		<div class="form-group">
-					    			<label for="email">Email<p id="s" style="display:inline">*</p></label>
+					    			<label for="email">Username<p id="s" style="display:inline">*</p></label>
 					    			<div class="input-group">
 					    				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					      				<input type="email" name="email" class="form-control" id="email" placeholder="Enter email" onchange="ValidateEmail()" required>
+					      				<input type="text" name="email" class="form-control" id="email" placeholder="Choose Username" required>
 					      			</div>
 					      		</div>
 
