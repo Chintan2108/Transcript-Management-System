@@ -16,7 +16,7 @@ $conn = mysqli_connect("localhost", "root", "","tms");
 
 		$mail = new PHPMailer(); // create a new object
 		$mail->IsSMTP(); // enable SMTP
-		$mail->SMTPDebug = 4; // debugging: 1 = errors and messages, 2 = messages only
+		//$mail->SMTPDebug = 4; // debugging: 1 = errors and messages, 2 = messages only
 		$mail->SMTPAuth = true; // authentication enabled
 		$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
 		$mail->Host = "smtp.googlemail.com";
@@ -35,7 +35,7 @@ $conn = mysqli_connect("localhost", "root", "","tms");
 
 		if($mail->send())
 		{
-			echo "<script>alert('This EMAIL is not registered !!!');</script>";
+
 	 		header("Location: ../forgotpassword-linksent.html");
 		} 
 		else
@@ -46,6 +46,7 @@ $conn = mysqli_connect("localhost", "root", "","tms");
 	else
 	{
 		echo "<script>alert('This EMAIL is not registered !!!');</script>";
+
 	}
 
 
